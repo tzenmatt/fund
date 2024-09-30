@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bobo Asset Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            border: 1px solid black; /* Minimalistic black box */
+            max-width: 90%;
+            box-sizing: border-box;
+        }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin: 0;
+        }
+        h1::before {
+            content: '';
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            position: relative;
+            margin-right: 10px;
+            background: linear-gradient(135deg, #333 25%, transparent 25%) 0 0,
+                        linear-gradient(225deg, #333 25%, transparent 25%) 0 0,
+                        linear-gradient(315deg, #333 25%, transparent 25%) 0 0,
+                        linear-gradient(45deg, #333 25%, transparent 25%) 0 0;
+            background-size: 50% 50%;
+            border-radius: 50%;
+            border: 2px solid black;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Heroic symbol */
+        }
+        p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 20px;
+            white-space: nowrap; /* Ensures the name stays on one line */
+        }
+        a {
+            display: block;
+            margin: 10px 0;
+            font-size: 1.1rem;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+        .annual-letters {
+            font-size: 1rem;
+            color: #555;
+        }
+    </style>
+    <script>
+        function reloadPage() {
+            window.location.reload();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="reloadPage()">
+            <span>Bobo Asset Management</span>
+        </h1>
+        <p>Bobo Asset Management is a private investment fund founded and led by <span style="white-space: nowrap;">Dr. Dimitrios P. Tzenetopoulos</span>.</p>
+        
+        <a href="mailto:info@boboasset.com">Contact Us: info@boboasset.com</a>
+        <a href="#" class="annual-letters">Annual Letters: No letters available</a>
+    </div>
+</body>
+</html>
