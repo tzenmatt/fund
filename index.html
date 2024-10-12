@@ -23,8 +23,10 @@
             border-radius: 5px;
             border: 1px solid black; /* Minimalistic black box */
             max-width: 90%;
+            width: 100%;
             box-sizing: border-box;
             overflow-wrap: break-word; /* Ensures text wraps within the box */
+            word-wrap: break-word; /* For older browsers */
         }
         h1 {
             font-size: 2.2rem;
@@ -56,7 +58,7 @@
             font-size: 1.1rem;
             color: #666;
             margin-bottom: 20px;
-            white-space: nowrap; /* Ensures the name stays on one line */
+            white-space: normal; /* Allows text to wrap */
         }
         a {
             display: block;
@@ -93,10 +95,10 @@
         <h1 onclick="reloadPage()">
             <span>Candestra Capital</span>
         </h1>
-        <p>Candestra Capital is a private investment fund founded and led by <span style="white-space: nowrap;">Dimitrios P. Tzenetopoulos</span>.</p>
+        <p>Candestra Capital is a private investment fund founded and led by <span>Dimitrios P. Tzenetopoulos</span>.</p>
         
         <a href="mailto:info@candestra.capital">Contact Us: info@candestra.capital</a>
-        <a href="#" class="annual-letters">Annual Letters: No letters available at this time</a>
+        <a href="#" class="annual-letters">Annual Letters: No letters available</a>
     </div>
 </body>
 </html>
