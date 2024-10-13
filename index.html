@@ -14,7 +14,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #fff; /* Set the background color to white */
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -23,13 +23,16 @@
         .container {
             display: inline-block; /* Ensures the box wraps around the content */
             text-align: center;
-            background-color: #fff;
+            background-color: #fff; /* Keep the box background white */
             padding: 30px;
             border-radius: 5px;
             border: 1px solid black; /* Minimalistic black box */
             box-sizing: border-box;
             overflow-wrap: break-word; /* Ensures text wraps within the box */
             word-wrap: break-word; /* For older browsers */
+        }
+        .single-line {
+            white-space: nowrap; /* Prevents line breaks */
         }
         h1 {
             font-size: 2.2rem;
@@ -95,6 +98,10 @@
         function reloadPage() {
             window.location.reload();
         }
+
+        function showLetterMessage() {
+            alert("There are no letters to display at this moment, however, investors will find any and all future letters in this area.");
+        }
     </script>
     <script type="application/ld+json">
     {
@@ -118,13 +125,24 @@
         </h1>
         <p>Candestra Capital is a private investment fund founded and led by <span>Dimitrios P. Tzenetopoulos</span>.</p>
         
-        <a href="mailto:info@candestra.capital">Contact Us: info@candestra.capital</a>
+        <p class="single-line">Contact us: <a href="mailto:info@candestra.com">info@candestra.com</a></p>
         
-        <p class="media-info">Access any media-related information <a href="http://www.dollarbear.xyz" target="_blank">here</a></p>
+        <div class="letters-to-investors single-line">
+            <p>Letters to investors: <a href="#" onclick="showLetterMessage()">View</a></p>
+        </div>
         
         <p class="disclaimer">
-            <strong>Disclaimer:</strong> We are not currently open to public investment as we do not manage public funds at this time.
+            <strong>Disclaimer:</strong> We are not open to external investments as we do not currently manage public funds.
         </p>
     </div>
+    <script>
+        function reloadPage() {
+            window.location.reload();
+        }
+
+        function showLetterMessage() {
+            alert("There are no letters to display at this moment, however, investors will find any and all future letters in this area.");
+        }
+    </script>
 </body>
 </html>
