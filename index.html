@@ -115,6 +115,13 @@
         .insight-title:hover {
             text-decoration: underline;
         }
+        .insight-content {
+            display: none;
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #666;
+            white-space: pre-line; /* Preserve line breaks */
+        }
     </style>
     <script>
         /**
@@ -136,12 +143,15 @@
                     Dear Investor,
 
                     Today's insight is short but important. As you probably know, retail trading interest spiked during COVID-19. 
-                    It then began to slow down. However, there has been a significant recent increase in the number of retail traders actively managing their funds. 
-                    I predict that this hype will increase even more over the next few months. Now is a good time for HOOD, which currently sits at 18.80 per share. 
+                    It then began to slow down. However, there has been a significant recent increase in the number of retail traders 
+                    actively managing their funds. I predict that this hype will increase even more over the next few months. 
+
+                    Now is a good time for $HOOD, which currently sits at $18.80 per share. 
+
                     None of this was financial advice.
 
-                    Stay safe,
-                    Dimitrios P - September 6th, 2024.
+                    Best regards,
+                    Dimitrios P. - September 6th, 2024.
                 `
             }
             /*
@@ -171,16 +181,27 @@
                 const insightItem = document.createElement('div');
                 insightItem.classList.add('insight-item');
 
-                // Create a link for the insight title
-                const insightTitle = document.createElement('a');
+                // Create a title for the insight
+                const insightTitle = document.createElement('div');
                 insightTitle.classList.add('insight-title');
                 insightTitle.textContent = insight.title;
-                insightTitle.href = `http://www.candestra.com/${insight.title.toLowerCase().replace(/ /g, '-')}`;
-                insightTitle.target = "_blank"; // Open in a new tab
+                insightTitle.addEventListener('click', () => toggleInsight(insightItem));
+
+                // Create a container for the content
+                const insightContent = document.createElement('div');
+                insightContent.classList.add('insight-content');
+                insightContent.textContent = insight.content;
 
                 insightItem.appendChild(insightTitle);
+                insightItem.appendChild(insightContent);
                 insightsContainer.appendChild(insightItem);
             });
+        }
+
+        // Function to toggle the visibility of insight content
+        function toggleInsight(insightItem) {
+            const insightContent = insightItem.querySelector('.insight-content');
+            insightContent.style.display = insightContent.style.display === 'block' ? 'none' : 'block';
         }
 
         // Populate insights when the page loads
