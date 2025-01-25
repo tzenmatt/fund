@@ -131,22 +131,33 @@
         // Example insights data (you can update this dynamically)
         const insights = [
             {
-                title: "The Hype Of Retail Traders In The Stock Market
-",
-                content: 
-            "Today's insight is short but important. As you probably know, retail trading interest spiked during COVID-19. It then began to slow down. 
-            However, there has been a significant recent increase in the number of retail traders actively managing their funds. 
-            I predict that this hype will increase even more over the next few months. Now is a good time for $HOOD, which currently sits at 18.80 per share. None of this was financial advice."
+                title: "The State of the Market - October 2023",
+                content: `
+                    Dear Investor,
+
+                    Today's insight is short but important. As you probably know, retail trading interest spiked during COVID-19. 
+                    It then began to slow down. However, there has been a significant recent increase in the number of retail traders 
+                    actively managing their funds. I predict that this hype will increase even more over the next few months. 
+
+                    Now is a good time for $HOOD, which currently sits at $18.80 per share. 
+
+                    None of this was financial advice.
+                `
             }
             /*
             TO ADD A NEW INSIGHT:
             1. Copy the object below and paste it above this comment.
             2. Replace the title and content with your new insight.
+               - Use backticks (\` \`) for multi-line content.
             3. Save the file and refresh the page.
 
             {
                 title: "New Insight Title",
-                content: "This is the content of the new insight."
+                content: \`
+                    Write your content here.
+                    You can use multiple lines and paragraphs.
+                    Just make sure to use backticks (\` \`).
+                \`
             }
             */
         ];
@@ -203,9 +214,9 @@
             <p>Letters to investors: <a href="#" onclick="showLetterMessage()">View</a></p>
         </div>
 
-        <!-- Market insights Section -->
+        <!-- Market Insights Section -->
         <div class="market-insights">
-            <h2>Market insights</h2>
+            <h2>Market Insights</h2>
             <div id="insights-list"></div>
         </div>
 
