@@ -90,6 +90,31 @@
             display: inline-block; /* Ensures the text stays on one line */
             white-space: nowrap; /* Prevents line break */
         }
+        .market-insights {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .market-insights h2 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: normal; /* Remove bold styling */
+        }
+        .insight-item {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+        .insight-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #007BFF;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .insight-title:hover {
+            text-decoration: underline;
+        }
     </style>
     <script>
         /**
@@ -102,6 +127,49 @@
         function showLetterMessage() {
             alert("There are no letters to display at this moment, however, investors will find any and all future letters in this area.");
         }
+
+        // Example insights data (you can update this dynamically)
+        const insights = [
+            {
+                title: "The State of the Market - October 2023",
+                content: "Markets are cyclical, and excesses often go unnoticed until it's too late. Today, we see signs of speculative behavior in the tech sector, reminiscent of past bubbles. Valuations are disconnected from fundamentals, presenting both risks and opportunities."
+            }
+            /*
+            TO ADD A NEW INSIGHT:
+            1. Copy the object below and paste it above this comment.
+            2. Replace the title and content with your new insight.
+            3. Save the file and refresh the page.
+
+            {
+                title: "New Insight Title",
+                content: "This is the content of the new insight."
+            }
+            */
+        ];
+
+        // Function to dynamically populate insights
+        function populateInsights() {
+            const insightsContainer = document.getElementById('insights-list');
+            insightsContainer.innerHTML = ''; // Clear existing content
+
+            insights.forEach((insight, index) => {
+                const insightItem = document.createElement('div');
+                insightItem.classList.add('insight-item');
+
+                // Create a link for the insight title
+                const insightTitle = document.createElement('a');
+                insightTitle.classList.add('insight-title');
+                insightTitle.textContent = insight.title;
+                insightTitle.href = `http://www.candestra.com/${insight.title.toLowerCase().replace(/ /g, '-')}`;
+                insightTitle.target = "_blank"; // Open in a new tab
+
+                insightItem.appendChild(insightTitle);
+                insightsContainer.appendChild(insightItem);
+            });
+        }
+
+        // Populate insights when the page loads
+        window.onload = populateInsights;
     </script>
     <script type="application/ld+json">
     {
@@ -130,19 +198,16 @@
         <div class="letters-to-investors single-line">
             <p>Letters to investors: <a href="#" onclick="showLetterMessage()">View</a></p>
         </div>
-        
+
+        <!-- Market Insights Section -->
+        <div class="market-insights">
+            <h2>Market Insights</h2>
+            <div id="insights-list"></div>
+        </div>
+
         <p class="disclaimer">
             <strong>Disclaimer:</strong> We are not open to external investments as we do not currently manage public funds.
         </p>
     </div>
-    <script>
-        function reloadPage() {
-            window.location.reload();
-        }
-
-        function showLetterMessage() {
-            alert("There are no letters to display at this moment, however, investors will find any and all future letters in this area.");
-        }
-    </script>
 </body>
 </html>
