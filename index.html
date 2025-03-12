@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -98,16 +99,6 @@
             color: #555;
         }
 
-        #md-content {
-            margin-top: 30px;
-            padding: 15px;
-            border-left: 3px solid #007BFF;
-            font-size: 1rem;
-            color: #444;
-            background: #f9f9f9;
-            line-height: 1.6;
-        }
-
         @media only screen and (max-width: 600px) {
             .container {
                 padding: 10px;
@@ -124,7 +115,15 @@
             }
         }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.16/marked.min.js"></script>
+    <script>
+        function reloadPage() {
+            window.location.reload();
+        }
+
+        function showLetterMessage() {
+            alert("There are no letters to display at this moment; however, investors will find any and all future letters in this area.");
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -154,33 +153,6 @@
         <p class="disclaimer">
             <strong>Disclaimer:</strong> We are not open to external investments as we do not currently manage public funds.
         </p>
-
-        <!-- Hybrid AI-Optimized Markdown Section -->
-        <div id="md-content">
-            <h2>LLM-Optimized Content</h2>
-            <p>Loading AI-optimized version...</p>
-        </div>
     </div>
-
-    <script>
-        function reloadPage() {
-            window.location.reload();
-        }
-
-        function showLetterMessage() {
-            alert("There are no letters to display at this moment; however, investors will find any and all future letters in this area.");
-        }
-
-        // Fetch and render candestra.md inside the page
-        fetch('/candestra.md')
-            .then(response => response.text())
-            .then(text => {
-                document.getElementById('md-content').innerHTML = `<h2>LLM-Optimized Content</h2>${marked.parse(text)}`;
-            })
-            .catch(error => {
-                document.getElementById('md-content').innerHTML = "<p>Error loading AI-optimized content.</p>";
-                console.error("Error fetching Markdown:", error);
-            });
-    </script>
 </body>
 </html>
