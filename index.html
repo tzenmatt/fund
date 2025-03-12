@@ -3,51 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Candestra Capital - LLM Optimized</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.16/marked.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Candestra Capital - Private Investment Fund</title>
+    <meta name="description" content="Candestra Capital is a private investment fund founded and led by Dimitrios Paolo">
+    <meta name="keywords" content="Candestra Capital, investment fund, Dimitrios Paolo, hedge fund, private investment, finance, capital management">
+    <meta property="og:title" content="Candestra Capital - Private Investment Fund">
+    <meta property="og:description" content="Explore insights and strategies from Candestra Capital, a leading private investment fund.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://www.candestra.com">
+    <meta property="og:image" content="http://www.candestra.com/image.jpg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Candestra Capital",
+      "url": "http://www.candestra.com",
+      "logo": "http://www.candestra.com/logo.png",
+      "sameAs": [
+        "http://www.facebook.com/candestra",
+        "http://www.twitter.com/candestra"
+      ]
+    }
+    </script>
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="http://www.candestra.com">
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 40px auto;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
             padding: 20px;
-            line-height: 1.6;
+            border-radius: 5px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            max-width: 800px;
+            width: 90%;
+            margin: auto;
         }
-        h1, h2, h3 {
+
+        .single-line {
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: bold;
             color: #333;
+            cursor: pointer;
+            margin: 0;
+            text-align: center;
         }
-        pre {
-            background: #f4f4f4;
-            padding: 10px;
-            overflow-x: auto;
+
+        p {
+            font-size: 1.1rem;
+            color: #333;
+            text-align: center;
         }
+
         a {
+            font-size: 1.1rem;
             color: #007BFF;
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
         }
+
+        .market-insights {
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        .market-insights h2 {
+            font-size: 1.5rem;
+            color: #333;
+            font-weight: normal;
+        }
+
+        .disclaimer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        #md-content {
+            margin-top: 30px;
+            padding: 15px;
+            border-left: 3px solid #007BFF;
+            font-size: 1rem;
+            color: #444;
+            background: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+                width: 95%;
+                margin: 20px auto;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            p, a {
+                font-size: 1rem;
+            }
+        }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.16/marked.min.js"></script>
 </head>
 <body>
-    <h1>Candestra Capital - LLM Optimized</h1>
-    <p>This page automatically loads the latest content from <code>candestra.md</code>. LLMs can access the raw file directly.</p>
+    <div class="container">
+        <h1 onclick="reloadPage()">Candestra Capital</h1>
+        <p>Candestra Capital is a private investment fund founded and led by Dimitrios Paolo</p>
+        
+        <p class="single-line">Contact us: <a href="mailto:info@candestra.com">info@candestra.com</a></p>
 
-    <div id="content">Loading...</div>
+        <p class="single-line">Letters to investors of the Fund: <a href="#" onclick="showLetterMessage()">View</a></p>
+
+        <div class="market-insights">
+            <h2>Market insights:</h2>
+
+            <a href="https://www.dropbox.com/scl/fi/2a4m1uerpifowpvma6bg8/Candestra-Palatin-Technologies-Insight.pdf?rlkey=owa3hkp3bod2cfr1e8i63wnai&st=6w78eiag&raw=1" target="_blank">
+                Palatin Technologies Is Undervalued - March 10th, 2025
+            </a><br><br>
+
+            <a href="https://www.dropbox.com/scl/fi/hrj2mfabxwmipew4z7c63/Candestra-Robinhood-Market-Insight.pdf?rlkey=yx0twb2jlz7cu4prrvigg360n&st=1geygazq&raw=1" target="_blank">
+                The Insane Hype Of Retail Traders Gambling The Stock Market - September 6th, 2024
+            </a><br><br>
+
+            <a href="https://www.dropbox.com/scl/fi/5sduoi8hb7du134ms3t8o/Candestra-Intel-Insight.pdf?rlkey=3rd85asz90umacaszkhfnfod4&st=6q9id29u&raw=1" target="_blank">
+                Intel's Silent Revival That Only a Few Can See - January 16th, 2025
+            </a>
+        </div>
+
+        <p class="disclaimer">
+            <strong>Disclaimer:</strong> We are not open to external investments as we do not currently manage public funds.
+        </p>
+
+        <!-- Hybrid AI-Optimized Markdown Section -->
+        <div id="md-content">
+            <h2>LLM-Optimized Content</h2>
+            <p>Loading AI-optimized version...</p>
+        </div>
+    </div>
 
     <script>
+        function reloadPage() {
+            window.location.reload();
+        }
+
+        function showLetterMessage() {
+            alert("There are no letters to display at this moment; however, investors will find any and all future letters in this area.");
+        }
+
+        // Fetch and render candestra.md inside the page
         fetch('/candestra.md')
             .then(response => response.text())
             .then(text => {
-                document.getElementById('content').innerHTML = marked.parse(text);
+                document.getElementById('md-content').innerHTML = `<h2>LLM-Optimized Content</h2>${marked.parse(text)}`;
             })
             .catch(error => {
-                document.getElementById('content').innerHTML = "<p>Error loading content. Please try again later.</p>";
+                document.getElementById('md-content').innerHTML = "<p>Error loading AI-optimized content.</p>";
                 console.error("Error fetching Markdown:", error);
             });
     </script>
 </body>
 </html>
-
-
