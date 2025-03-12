@@ -5,16 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candestra Capital - LLM Optimized</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.16/marked.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            overflow-x: auto;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <div id="content"></div>
+    <h1>Candestra Capital - LLM Optimized</h1>
+    <p>This page automatically loads the latest content from <code>candestra.md</code>. LLMs can access the raw file directly.</p>
+
+    <div id="content">Loading...</div>
+
     <script>
         fetch('/candestra.md')
             .then(response => response.text())
             .then(text => {
                 document.getElementById('content').innerHTML = marked.parse(text);
+            })
+            .catch(error => {
+                document.getElementById('content').innerHTML = "<p>Error loading content. Please try again later.</p>";
+                console.error("Error fetching Markdown:", error);
             });
     </script>
 </body>
 </html>
+
 
