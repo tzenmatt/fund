@@ -1,158 +1,211 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Candestra Capital - Private Investment Fund</title>
-    <meta name="description" content="Candestra Capital is a private investment fund founded and led by Dimitrios Paolo">
-    <meta name="keywords" content="Candestra Capital, investment fund, Dimitrios Paolo, hedge fund, private investment, finance, capital management">
-    <meta property="og:title" content="Candestra Capital - Private Investment Fund">
-    <meta property="og:description" content="Explore insights and strategies from Candestra Capital, a leading private investment fund.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="http://www.candestra.com">
-    <meta property="og:image" content="http://www.candestra.com/image.jpg">
-    <script type="application/ld+json">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Candestra Capital - Private Investment Fund</title>
+  <meta name="description" content="Candestra Capital is a private investment fund founded and led by Dimitrios Paolo" />
+  <meta name="keywords" content="Candestra Capital, investment fund, Dimitrios Paolo, hedge fund, private investment, finance, capital management" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Dimitrios Paolo" />
+  <meta name="publisher" content="Candestra Capital" />
+  <link rel="canonical" href="http://www.candestra.com" />
+  <meta property="og:title" content="Candestra Capital - Private Investment Fund" />
+  <meta property="og:description" content="Explore insights and strategies from Candestra Capital, a leading private investment fund." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://www.candestra.com" />
+  <meta property="og:image" content="http://www.candestra.com/image.jpg" />
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Candestra Capital",
       "url": "http://www.candestra.com",
       "logo": "http://www.candestra.com/logo.png",
-      "sameAs": [
-        "http://www.facebook.com/candestra",
-        "http://www.twitter.com/candestra"
-      ]
+      "sameAs": ["https://x.com/dimitriospaolo"],
+      "founder": {
+        "@type": "Person",
+        "name": "Dimitrios Paolo",
+        "url": "https://x.com/dimitriospaolo"
+      }
     }
-    </script>
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="http://www.candestra.com">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow-y: auto;
-            min-height: 100vh;
-        }
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-y: auto;
+      min-height: 100vh;
+    }
 
-        .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            border: 1px solid black;
-            box-sizing: border-box;
-            max-width: 800px;
-            width: 90%;
-            margin: auto;
-        }
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      border: 1px solid black;
+      box-sizing: border-box;
+      max-width: 800px;
+      width: 90%;
+      margin: auto;
+    }
 
-        .single-line {
-            white-space: nowrap;
-            text-align: center;
-        }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+      margin: 0;
+      text-align: center;
+    }
 
-        h1 {
-            font-size: 2.2rem;
-            font-weight: bold;
-            color: #333;
-            cursor: pointer;
-            margin: 0;
-            text-align: center;
-        }
+    .follow {
+      margin-top: 5px;
+      color: #444;
+      text-align: center;
+    }
 
-        p {
-            font-size: 1.1rem;
-            color: #333;
-            text-align: center;
-        }
+    .intro {
+      font-size: 1.1rem;
+      color: #666;
+      text-align: left;
+      margin-top: 20px;
+    }
 
-        a {
-            font-size: 1.1rem;
-            color: #007BFF;
-            text-decoration: none;
-        }
+    a {
+      font-size: 1.1rem;
+      color: #007BFF;
+      text-decoration: none;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
+    a:hover {
+      text-decoration: underline;
+    }
 
-        .market-insights {
-            margin-top: 10px;
-            text-align: left;
-        }
+    .section {
+      margin-top: 25px;
+      text-align: left;
+    }
 
-        .market-insights h2 {
-            font-size: 1.5rem;
-            color: #333;
-            font-weight: normal;
-        }
+    .section h2 {
+      font-size: 1.5rem;
+      color: #333;
+      font-weight: normal;
+      margin-bottom: 5px;
+    }
 
-        .disclaimer {
-            margin-top: 20px;
-            font-size: 0.9rem;
-            color: #555;
-        }
+    .row-line {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-top: 20px;
+    }
 
-        @media only screen and (max-width: 600px) {
-            .container {
-                padding: 10px;
-                width: 95%;
-                margin: 20px auto;
-            }
+    .row-line h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: normal;
+      color: #333;
+    }
 
-            h1 {
-                font-size: 1.8rem;
-            }
+    .row-line a {
+      font-size: 1.1rem;
+      color: #007BFF;
+      text-decoration: none;
+    }
 
-            p, a {
-                font-size: 1rem;
-            }
-        }
-    </style>
-    <script>
-        function reloadPage() {
-            window.location.reload();
-        }
+    .row-line a:hover {
+      text-decoration: underline;
+    }
 
-        function showLetterMessage() {
-            alert("There are no letters to display at this moment; however, investors will find any and all future letters in this area.");
-        }
-    </script>
+    .disclaimer {
+  margin-top: 40px;
+  font-size: 0.85rem;
+  color: #888;
+  text-align: center;
+  line-height: 1.6;
+}
+
+    @media only screen and (max-width: 600px) {
+      .container {
+        padding: 10px;
+        width: 95%;
+        margin: 20px auto;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .intro,
+      a {
+        font-size: 1rem;
+      }
+
+      .section h2,
+      .row-line h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+  <script>
+    function reloadPage() {
+      window.location.reload();
+    }
+
+    function showLetterMessage() {
+      alert("There are no letters to display at this moment; however, investors will find any and all future letters in this area.");
+    }
+  </script>
 </head>
 <body>
-    <div class="container">
-        <h1 onclick="reloadPage()">Candestra Capital</h1>
-        <p>Candestra Capital is a private investment fund founded and led by Dimitrios Paolo</p>
-        
-        <p class="single-line">Contact us: <a href="mailto:info@candestra.com">info@candestra.com</a></p>
+  <div class="container">
+    <h1 onclick="reloadPage()">Candestra Capital</h1>
 
-        <p class="single-line">Letters to investors of the Fund: <a href="#" onclick="showLetterMessage()">View</a></p>
+    <p class="follow">
+      Follow us on X: <a href="https://x.com/dimitriospaolo" target="_blank">@dimitriospaolo</a>
+    </p>
 
-        <div class="market-insights">
-            <h2>Market insights:</h2>
+    <p class="intro">
+      Candestra is a concentrated private investment fund founded and led by Dimitrios Paolo. Our objective is to compound capital at an attractive rate of return by allocating exclusively to our highest-conviction ideas. We follow a value-oriented investment philosophy, seeking opportunities where securities are trading at a meaningful discount to their intrinsic value, and exiting positions once that gap has closed. Because true mispricings are rare, we are willing to size positions significantly when we find them. This disciplined concentration can result in periods of volatility and underperformance. When the Fund begins to accept outside capital, prospective investors must be aligned with our long-term time horizon-otherwise, Candestra is not the right fit.
+    </p>
 
-            <a href="https://www.dropbox.com/scl/fi/2a4m1uerpifowpvma6bg8/Candestra-Palatin-Technologies-Insight.pdf?rlkey=owa3hkp3bod2cfr1e8i63wnai&st=6w78eiag&raw=1" target="_blank">
-                Here's Why My Eyes Are Locked In On Palatin Technologies - March 10th, 2025
-            </a><br><br>
-
-            <a href="https://www.dropbox.com/scl/fi/hrj2mfabxwmipew4z7c63/Candestra-Robinhood-Market-Insight.pdf?rlkey=yx0twb2jlz7cu4prrvigg360n&st=1geygazq&raw=1" target="_blank">
-                The Insane Hype Of Retail Traders Gambling The Stock Market - September 6th, 2024
-            </a><br><br>
-
-            <a href="https://www.dropbox.com/scl/fi/5sduoi8hb7du134ms3t8o/Candestra-Intel-Insight.pdf?rlkey=3rd85asz90umacaszkhfnfod4&st=6q9id29u&raw=1" target="_blank">
-                Intel's Silent Revival That Only a Few Can See - January 16th, 2025
-            </a>
-        </div>
-
-        <p class="disclaimer">
-            <strong>Disclaimer:</strong> We are not open to external investments as we do not currently manage public funds.
-        </p>
+    <div class="section row-line">
+      <h2>Contact:</h2>
+      <a href="mailto:info@candestra.com">info@candestra.com</a>
     </div>
+    </p>
+
+    <div class="section row-line">
+      <h2>Letters:</h2>
+      <a href="#" onclick="showLetterMessage()">View</a>
+    </div>
+
+    <div class="section market-insights">
+      <h2>Market Insights:</h2>
+
+      <a href="https://www.dropbox.com/scl/fi/2a4m1uerpifowpvma6bg8/Candestra-Palatin-Technologies-Insight.pdf?rlkey=owa3hkp3bod2cfr1e8i63wnai&st=6w78eiag&raw=1" target="_blank">
+        Palatin Technologies Is Undervalued - March 10th, 2025
+      </a><br /><br />
+
+      <a href="https://www.dropbox.com/scl/fi/hrj2mfabxwmipew4z7c63/Candestra-Robinhood-Market-Insight.pdf?rlkey=yx0twb2jlz7cu4prrvigg360n&st=1geygazq&raw=1" target="_blank">
+        The Insane Hype Of Retail Traders Gambling The Stock Market - September 6th, 2024
+      </a><br /><br />
+
+      <a href="https://www.dropbox.com/scl/fi/5sduoi8hb7du134ms3t8o/Candestra-Intel-Insight.pdf?rlkey=3rd85asz90umacaszkhfnfod4&st=6q9id29u&raw=1" target="_blank">
+        Intel's Silent Revival That Only a Few Can See - January 16th, 2025
+      </a>
+    </div>
+
+    <div class="disclaimer">
+      © 2025 Candestra Capital<br /><br />
+      This document is intended for informational purposes and should not be construed as an offering or the solicitation of an offer to purchase an interest in Candestra Capital (the “Fund”). Past performance should not be mistaken for and should not be construed as an indicator of future performance and there is no assurance that the investment objectives of the Fund will be achieved. An investment in the Fund involves a high degree of risk. The information contained in this document is not, and should not be construed as, legal, accounting, investment or tax advice. The contents of this document are based upon sources of information believed to be reliable but no warranty or representation, expressed or implied, is given as to their accuracy or completeness. All opinions and estimates contained in this report constitute the Manager’s judgment as of the date of this report, are subject to change without notice and are provided in good faith but without legal responsibility. The Manager asserts that the reader is solely liable for their interpretation and use of any information contained in this document.       We are not open to external investments as we do not currently manage public funds at this moment.
+      <br /><br />    </div>
+  </div>
 </body>
 </html>
