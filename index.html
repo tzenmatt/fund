@@ -188,17 +188,70 @@
       <a href="#" onclick="showLetterMessage()">View</a>
     </div>
 
-    <div class="section market-insights">
-      <h2>Market Insights:</h2>
+    <div class="section publications">
+      <h2>Publications:</h2>
 
-      <a href="https://www.dropbox.com/scl/fi/hrj2mfabxwmipew4z7c63/Candestra-Robinhood-Market-Insight.pdf?rlkey=yx0twb2jlz7cu4prrvigg360n&st=1geygazq&raw=1" target="_blank">
-        The Insane Hype Of Retail Traders Gambling The Stock Market - September 6th, 2024
-      </a><br /><br />
+      <!-- DataTables CSS + JS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
 
-      <a href="https://www.dropbox.com/scl/fi/5sduoi8hb7du134ms3t8o/Candestra-Intel-Insight.pdf?rlkey=3rd85asz90umacaszkhfnfod4&st=6q9id29u&raw=1" target="_blank">
-        Intel's Silent Revival That Only a Few Can See - January 16th, 2025
-      </a>
-    </div>
+<style>
+  body        { background:#fff; color:#000; font-family:Arial, Helvetica, sans-serif; }
+  a           { color:#0066cc; text-decoration:none; }
+  a:hover     { text-decoration:underline; }
+  table       { width:100%; border-collapse:collapse; }
+  table.dataTable thead th { background:#c3b26e; color:#000; }
+  table.dataTable tbody tr:nth-child(even) { background:#f9f9f9; }
+</style>
+
+<table id="reports" class="display">
+  <thead>
+    <tr>
+      <th>Report Title</th>
+      <th>Company</th>
+      <th>Ticker</th>
+      <th>Date</th>
+      <th>Sector</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <a href="https://www.dropbox.com/scl/fi/hrj2mfabxwmipew4z7c63/Candestra-Robinhood-Market-Insight.pdf?rlkey=yx0twb2jlz7cu4prrvigg360n&st=1geygazq&raw=1" target="_blank">
+          The Insane Hype Of Retail Traders Gambling The Stock Market
+        </a>
+      </td>
+      <td>Robinhood Markets, Inc.</td>
+      <td>NASDAQ: HOOD</td>
+      <td>2024-Sep-06</td>
+      <td>Financials</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://www.dropbox.com/scl/fi/5sduoi8hb7du134ms3t8o/Candestra-Intel-Insight.pdf?rlkey=3rd85asz90umacaszkhfnfod4&st=6q9id29u&raw=1" target="_blank">
+          Intel's Silent Revival That Only a Few Can See
+        </a>
+      </td>
+      <td>Intel Corporation</td>
+      <td>NASDAQ: INTC</td>
+      <td>2025-Jan-16</td>
+      <td>Technology</td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+  $(document).ready(function () {
+    $('#reports').DataTable({
+      paging:    false,
+      info:      false,
+      searching: true,
+      ordering:  true
+    });
+  });
+</script>
+
 
     <div class="disclaimer">
       © 2025 Candestra Ltd.<br /><br />
