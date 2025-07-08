@@ -1,292 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Candestra Capital</title>
-  <meta name="description" content="Candestra Ltd. is a privately held parent company founded and led by Dimitrios Paolo" />
-  <meta name="keywords" content="Candestra Ltd., investment holdings, Dimitrios Paolo, private investment, finance, capital management" />
-  <meta name="robots" content="index, follow" />
-  <meta name="author" content="Dimitrios Paolo" />
-  <meta name="publisher" content="Candestra Ltd." />
-  <link rel="canonical" href="http://www.candestra.com" />
-  <meta property="og:title" content="Candestra Ltd." />
-  <meta property="og:description" content="Explore insights and strategies from Candestra Ltd., a privately held investment entity." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="http://www.candestra.com" />
-  <meta property="og:image" content="http://www.candestra.com/image.jpg" />
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Candestra Capital",
-      "url": "http://www.candestra.com",
-      "logo": "http://www.candestra.com/logo.png",
-      "sameAs": ["https://x.com/dimitriospaolo"],
-      "founder": {
-        "@type": "Person",
-        "name": "Dimitrios Paolo",
-        "url": "https://x.com/dimitriospaolo"
-      }
-    }
-  </script>
-  <style>
-    :root {
-      --bg-color: #fff;
-      --text-color: #000;
-      --card-bg: #fff;
-      --border-color: black;
-      --link-color: #007BFF;
-      --muted-color: #888;
-      --thead-bg: #c3b26e;
-      --thead-color: #000;
-      --row-alt-bg: #f9f9f9;
-    }
-    body.dark-mode {
-      --bg-color: #000;
-      --text-color: #fff;
-      --card-bg: #000;
-      --border-color: #fff;
-      --muted-color: #aaa;
-      --thead-bg: #444;
-      --thead-color: #fff;
-      --row-alt-bg: #111;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow-y: auto;
-      min-height: 100vh;
-      transition: background-color 0.3s, color 0.3s;
-    }
-    .container {
-      background-color: var(--card-bg);
-      padding: 20px;
-      border-radius: 5px;
-      border: 1px solid var(--border-color);
-      box-sizing: border-box;
-      max-width: 800px;
-      width: 90%;
-      margin: auto;
-    }
-    h1 {
-      font-size: 2.2rem;
-      font-weight: bold;
-      color: var(--text-color);
-      cursor: pointer;
-      margin: 0;
-      text-align: center;
-    }
-    .follow {
-      margin-top: 5px;
-      color: var(--text-color);
-      text-align: center;
-    }
-    .intro {
-      font-size: 1.1rem;
-      color: var(--text-color);
-      text-align: left;
-      margin-top: 20px;
-    }
-    a {
-      font-size: 1.1rem;
-      color: var(--link-color);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .section {
-      margin-top: 25px;
-      text-align: left;
-    }
-    .section h2 {
-      font-size: 1.5rem;
-      color: var(--text-color);
-      font-weight: normal;
-      margin-bottom: 5px;
-    }
-    .row-line {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 10px;
-      margin-top: 20px;
-    }
-    .row-line h2 {
-      margin: 0;
-      font-size: 1.5rem;
-      font-weight: normal;
-      color: var(--text-color);
-    }
-    .row-line a {
-      font-size: 1.1rem;
-      color: var(--link-color);
-      text-decoration: none;
-    }
-    .row-line a:hover {
-      text-decoration: underline;
-    }
-    .disclaimer {
-      margin-top: 40px;
-      font-size: 0.6rem;
-      color: var(--muted-color);
-      text-align: center;
-      line-height: 1.6;
-    }
-    .mode-toggle {
-      text-align: center;
-      margin-bottom: 15px;
-    }
-    .mode-toggle button {
-      padding: 6px 12px;
-      font-size: 0.9rem;
-      background: none;
-      border: 1px solid var(--text-color);
-      color: var(--text-color);
-      cursor: pointer;
-      border-radius: 4px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      color: var(--text-color);
-    }
-    table.dataTable thead th {
-      background: var(--thead-bg);
-      color: var(--thead-color);
-    }
-    table.dataTable tbody tr:nth-child(even) {
-      background: var(--row-alt-bg);
-    }
-    @media only screen and (max-width: 600px) {
-      .container {
-        padding: 10px;
-        width: 95%;
-        margin: 20px auto;
-      }
-      h1 {
-        font-size: 1.8rem;
-      }
-      .intro, a {
-        font-size: 1rem;
-      }
-      .section h2, .row-line h2 {
-        font-size: 1.3rem;
-      }
-    }
-  </style>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
-  <script>
-    function reloadPage() {
-      window.location.reload();
-    }
-    function showLetterMessage() {
-      alert("There are no letters to display at this moment; however, partners will find any and all future letters in this area.");
-    }
-    function toggleMode() {
-      document.body.classList.toggle("dark-mode");
-    }
-    $(document).ready(function () {
-      $('#reports').DataTable({
-        paging: false,
-        info: false,
-        searching: true,
-        ordering: true
-      });
-    });
-  </script>
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
-</head>
-<body>
-  <div class="container">
-    <div class="mode-toggle">
-      <button onclick="toggleMode()">Toggle Light/Dark Mode</button>
-    </div>
-    <h1 onclick="reloadPage()">Candestra Capital</h1>
-    <p class="follow">
-      X: <a href="https://x.com/dimitriospaolo" target="_blank">@dimitriospaolo</a>
-    </p>
-    <p class="intro">
-      Candestra Capital is a privately held investment firm founded and led by Dimitrios Paolo. It operates under Candestra Ltd., and its objective is to compound capital at an attractive rate of return by deploying proprietary capital into high-conviction opportunities through equity stakes or asset-specific vehicles.
-
-      We follow a value-oriented philosophy, seeking complexity that is mispriced or misunderstood. Where conviction is high and inefficiency is clear, we size significantly. Because true opportunities are rare, we operate with a long-term time horizon and a willingness to remain inactive when nothing meets our standards.
-
-      Candestra Capital currently invests proprietary capital. Future partners must be deeply aligned with this approach.
-    </p>
-    <div class="section row-line">
-      <h2>Contact:</h2>
-      <a href="mailto:info@candestra.com">info@candestra.com</a>
-    </div>
-    </p>
-    <div class="section row-line">
-      <h2>Letters:</h2>
-      <a href="#" onclick="showLetterMessage()">View</a>
-    </div>
-    <div class="section publications">
-      <h2>Publications:</h2>
-      <table id="reports" class="display">
-        <thead>
-          <tr>
-            <th>Report Title</th>
-            <th>Company</th>
-            <th>Ticker</th>
-            <th>Date</th>
-            <th>Sector</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <a href="https://www.dropbox.com/scl/fi/hrj2mfabxwmipew4z7c63/Candestra-Robinhood-Market-Insight.pdf?rlkey=yx0twb2jlz7cu4prrvigg360n&st=1geygazq&raw=1" target="_blank">
-                The Insane Hype Of Retail Traders Gambling The Stock Market
-              </a>
-            </td>
-            <td>Robinhood Markets, Inc.</td>
-            <td>NASDAQ: HOOD</td>
-            <td>2024-Sep-06</td>
-            <td>Financials</td>
-          </tr>
-          <tr>
-            <td>
-              <a href="https://www.dropbox.com/scl/fi/5sduoi8hb7du134ms3t8o/Candestra-Intel-Insight.pdf?rlkey=3rd85asz90umacaszkhfnfod4&st=6q9id29u&raw=1" target="_blank">
-                Intel's Silent Revival That Only a Few Can See
-              </a>
-            </td>
-            <td>Intel Corporation</td>
-            <td>NASDAQ: INTC</td>
-            <td>2025-Jan-16</td>
-            <td>Technology</td>
-          </tr>
-          <tr>
-            <td>
-              <a href="https://www.dropbox.com/scl/fi/8gmk4p3hj6vyhxqipwckg/short-INMB.pdf?rlkey=0yomonlaaw487sx8qm22ezmd3&st=itoj1m5h&raw=1" target="_blank">
-                Why I’m Short INmune Bio
-              </a>
-            </td>
-            <td>INmune Bio, Inc.</td>
-            <td>NASDAQ: INMB</td>
-            <td>2025-Jun-23</td>
-            <td>Biotechnology</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="disclaimer">
-      © 2025 Candestra Ltd.<br /><br />
-      This website and its contents are intended solely for informational purposes. Nothing herein constitutes an offer to sell or a solicitation of an offer to buy any securities or interests in Candestra Ltd. or its affiliates.
-      <br /><br />
-      Candestra Capital currently invests proprietary capital through Candestra Ltd., a private limited company. Past performance is not indicative of future results. Any references to investment strategies are for illustrative purposes only and do not guarantee the achievement of any objective.
-      <br /><br />
-      The information presented is based on sources believed to be reliable, but no warranty is given as to its accuracy or completeness. All opinions and estimates reflect the judgment of the Manager at the time of publication and are subject to change without notice. The Manager disclaims any liability for decisions made based on this content.
-    </div>
-  </div>
-</body>
-</html>
+<tbody>
+  <tr>
+    <td>
+      <a href="https://www.dropbox.com/scl/fi/8gmk4p3hj6vyhxqipwckg/short-INMB.pdf?rlkey=0yomonlaaw487sx8qm22ezmd3&st=itoj1m5h&raw=1" target="_blank">
+        Why I’m Short INmune Bio
+      </a>
+    </td>
+    <td>INmune Bio, Inc.</td>
+    <td>NASDAQ: INMB</td>
+    <td>2025-Jun-23</td>
+    <td>Biotechnology</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://www.dropbox.com/scl/fi/5sduoi8hb7du134ms3t8o/Candestra-Intel-Insight.pdf?rlkey=3rd85asz90umacaszkhfnfod4&st=6q9id29u&raw=1" target="_blank">
+        Intel's Silent Revival That Only a Few Can See
+      </a>
+    </td>
+    <td>Intel Corporation</td>
+    <td>NASDAQ: INTC</td>
+    <td>2025-Jan-16</td>
+    <td>Technology</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://www.dropbox.com/scl/fi/hrj2mfabxwmipew4z7c63/Candestra-Robinhood-Market-Insight.pdf?rlkey=yx0twb2jlz7cu4prrvigg360n&st=1geygazq&raw=1" target="_blank">
+        The Insane Hype Of Retail Traders Gambling The Stock Market
+      </a>
+    </td>
+    <td>Robinhood Markets, Inc.</td>
+    <td>NASDAQ: HOOD</td>
+    <td>2024-Sep-06</td>
+    <td>Financials</td>
+  </tr>
+</tbody>
