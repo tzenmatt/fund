@@ -20,19 +20,17 @@
   <meta property="og:url" content="http://www.candestra.com" />
   <meta property="og:image" content="http://www.candestra.com/og-image.jpg" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- jQuery + DataTables -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
 
   <style>
     :root {
-      --primary-color: #003366; /* Berkshire Blue */
-      --link-blue: #0000EE;     /* Classic Web Blue */
+      --primary-color: #003366;
+      --link-blue: #0000EE;
       --bg-color: #ffffff;
       --text-color: #000000;
       --border-color: #cccccc;
@@ -63,7 +61,6 @@
       margin: 0 auto;
     }
 
-    /* DARK MODE TOGGLE */
     .mode-toggle {
       text-align: right;
       margin-bottom: 1rem;
@@ -77,7 +74,6 @@
       color: var(--text-color);
     }
 
-    /* HEADER */
     .header {
       text-align: center;
       padding-bottom: 1rem;
@@ -85,12 +81,14 @@
       border-bottom: 2px solid var(--border-color);
     }
 
+    /* ✅ Restored ORIGINAL title style */
     h1 {
-      font-family: "Merriweather", serif;
-      font-size: 2.4rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 2.5rem;
       font-weight: 700;
       color: var(--primary-color);
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.5px;
     }
 
     .social-links {
@@ -103,7 +101,6 @@
       font-size: 1rem;
     }
 
-    /* INTRO */
     .intro {
       text-align: center;
       max-width: 750px;
@@ -112,7 +109,6 @@
       line-height: 1.7;
     }
 
-    /* CTA SECTION */
     .cta-section {
       border-top: 1px solid var(--border-color);
       border-bottom: 1px solid var(--border-color);
@@ -125,7 +121,6 @@
       font-family: "Merriweather", serif;
       font-size: 1.4rem;
       color: var(--primary-color);
-      margin-bottom: 0.5rem;
     }
 
     .email-form {
@@ -152,38 +147,33 @@
     }
 
     .btn:hover {
-      opacity: 0.8;
+      opacity: 0.85;
     }
 
-    /* SECTION TITLES */
     .section-title {
       font-family: "Merriweather", serif;
       font-size: 1.4rem;
-      padding-bottom: 0.4rem;
       border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.4rem;
       margin-bottom: 1.5rem;
       color: var(--primary-color);
     }
 
-    /* TABLES */
     table {
       width: 100%;
       border-collapse: collapse;
       margin-bottom: 2.5rem;
-      font-size: 0.95rem;
     }
 
     th {
       text-align: left;
-      padding: 0.6rem 0.4rem;
+      padding: 0.6rem;
       border-bottom: 2px solid var(--border-color);
       font-family: "Merriweather", serif;
-      font-weight: 700;
-      font-size: 1rem;
     }
 
     td {
-      padding: 0.75rem 0.4rem;
+      padding: 0.7rem;
       border-bottom: 1px solid var(--border-color);
     }
 
@@ -196,7 +186,6 @@
       opacity: 0.8;
     }
 
-    /* FOOTER */
     .disclaimer {
       font-size: 0.8rem;
       line-height: 1.6;
@@ -211,14 +200,12 @@
 <body>
   <div class="container">
 
-    <!-- DARK MODE BUTTON -->
     <div class="mode-toggle">
       <button onclick="toggleMode()">
         <span id="mode-icon">🌙</span> <span id="mode-text">Dark Mode</span>
       </button>
     </div>
 
-    <!-- HEADER -->
     <header class="header">
       <h1>Candestra</h1>
       <div class="social-links">
@@ -226,12 +213,10 @@
       </div>
     </header>
 
-    <!-- INTRO -->
     <section class="intro">
       <p>Candestra is a private investment fund founded and led by Dimitrios Paolo. We follow a value-oriented philosophy, seeking complexity that is mispriced or misunderstood. Where conviction is high and inefficiency is clear, we size significantly. Because true opportunities are rare, we operate with a long-term time horizon and a willingness to remain inactive when nothing meets our standards.</p>
     </section>
 
-    <!-- CTA -->
     <section class="cta-section">
       <h3 class="cta-title">Stay Ahead</h3>
       <p>Receive our real-time market commentary directly in your inbox.</p>
@@ -259,11 +244,10 @@
 
         <tbody>
 
-          <!-- NEW MTCH REPORT - uses full Dropbox URL with raw=1 -->
+          <!-- NEW MTCH -->
           <tr>
             <td>
-              <a href="https://www.dropbox.com/scl/fi/ihunkadipk8rq638e3ant/Candestra-MTCH-Insight.pdf?rlkey=9253nke78h0sdmz5izr5jpb68&st=s4jhey9i&raw=1"
-                 target="_blank" rel="noopener noreferrer">
+              <a href="https://www.dropbox.com/scl/fi/ihunkadipk8rq638e3ant/Candestra-MTCH-Insight.pdf?rlkey=9253nke78h0sdmz5izr5jpb68&st=s4jhey9i&raw=1" target="_blank">
                 Maybe Dating Isn’t as “Dead” as Everyone Thinks
               </a>
             </td>
@@ -273,15 +257,10 @@
             <td>Consumer Internet</td>
           </tr>
 
-          <!-- Existing Reports with ORIGINAL working URLs restored -->
+          <!-- ORIGINAL LINKS RESTORED EXACTLY -->
 
           <tr>
-            <td>
-              <a href="https://www.dropbox.com/scl/fi/fnzj2i314djcmxbq2xsqr/Candestra-Nostr-Insight.pdf?rlkey=q18jk29hxwgb36kt7b302sg96&st=41o3z97r&raw=1"
-                 target="_blank" rel="noopener noreferrer">
-                Nostr: A Truly Censorship Resistant Technology at Scale
-              </a>
-            </td>
+            <td><a href="https://www.dropbox.com/scl/fi/fnzj2i314djcmxbq2xsqr/Candestra-Nostr-Insight.pdf?rlkey=q18jk29hxwgb36kt7b302sg96&st=41o3z97r&raw=1" target="_blank">Nostr: A Truly Censorship Resistant Technology at Scale</a></td>
             <td>Nostr Protocol</td>
             <td>N/A</td>
             <td>2025-Sep-11</td>
@@ -289,12 +268,7 @@
           </tr>
 
           <tr>
-            <td>
-              <a href="https://www.dropbox.com/scl/fi/a8eki48levxr5nlrmszpr/Candestra-Intel-Update.pdf?rlkey=mfi6jxm6am7oihxgj0h3b3gnk&raw=1"
-                 target="_blank" rel="noopener noreferrer">
-                The Entire World Is Betting Against Intel Whilst I Buy More
-              </a>
-            </td>
+            <td><a href="https://www.dropbox.com/scl/fi/a8eki48levxr5nlrmszpr/Candestra-Intel-Update.pdf?rlkey=mfi6jxm6am7oihxgj0h3b3gnk&raw=1" target="_blank">The Entire World Is Betting Against Intel Whilst I Buy More</a></td>
             <td>Intel Corporation</td>
             <td>INTC</td>
             <td>2025-Aug-07</td>
@@ -302,12 +276,7 @@
           </tr>
 
           <tr>
-            <td>
-              <a href="https://www.dropbox.com/scl/fi/8gmk4p3hj6vyhxqipwckg/short-INMB.pdf?rlkey=0yomonlaaw487sx8qm22ezmd3&st=itoj1m5h&raw=1"
-                 target="_blank" rel="noopener noreferrer">
-                Why I'm Short INmune Bio
-              </a>
-            </td>
+            <td><a href="https://www.dropbox.com/scl/fi/8gmk4p3hj6vyhxqipwckg/short-INMB.pdf?rlkey=0yomonlaaw487sx8qm22ezmd3&st=itoj1m5h&raw=1" target="_blank">Why I'm Short INmune Bio</a></td>
             <td>INmune Bio, Inc.</td>
             <td>INMB</td>
             <td>2025-Jun-23</td>
@@ -315,12 +284,7 @@
           </tr>
 
           <tr>
-            <td>
-              <a href="https://www.dropbox.com/scl/fi/5sduoi8hb7du134ms3t8o/Candestra-Intel-Insight.pdf?rlkey=3rd85asz90umacaszkhfnfod4&st=6q9id29u&raw=1"
-                 target="_blank" rel="noopener noreferrer">
-                Intel's Silent Revival That Only a Few Can See
-              </a>
-            </td>
+            <td><a href="https://www.dropbox.com/scl/fi/5sduoi8hb7du134ms3t8o/Candestra-Intel-Insight.pdf?rlkey=3rd85asz90umacaszkhfnfod4&st=6q9id29u&raw=1" target="_blank">Intel's Silent Revival That Only a Few Can See</a></td>
             <td>Intel Corporation</td>
             <td>INTC</td>
             <td>2025-Jan-16</td>
@@ -328,12 +292,7 @@
           </tr>
 
           <tr>
-            <td>
-              <a href="https://www.dropbox.com/scl/fi/hrj2mfabxwmipew4z7c63/Candestra-Robinhood-Market-Insight.pdf?rlkey=yx0twb2jlz7cu4prrvigg360n&st=1geygazq&raw=1"
-                 target="_blank" rel="noopener noreferrer">
-                The Insane Hype Of Retail Traders Gambling The Stock Market
-              </a>
-            </td>
+            <td><a href="https://www.dropbox.com/scl/fi/hrj2mfabxwmipew4z7c63/Candestra-Robinhood-Market-Insight.pdf?rlkey=yx0twb2jlz7cu4prrvigg360n&st=1geygazq&raw=1" target="_blank">The Insane Hype Of Retail Traders Gambling The Stock Market</a></td>
             <td>Robinhood Markets, Inc.</td>
             <td>HOOD</td>
             <td>2024-Sep-06</td>
@@ -344,19 +303,16 @@
       </table>
     </section>
 
-    <!-- CONTACT -->
     <section class="section">
       <h2 class="section-title">Contact</h2>
       <p>For any inquiries, please email us at <a href="mailto:info@candestra.com">info@candestra.com</a></p>
     </section>
 
-    <!-- LETTERS -->
     <section class="section">
       <h2 class="section-title">Investor Letters</h2>
       <p>There are no letters to display at this moment; however, partners will find any and all future letters in this area.</p>
     </section>
 
-    <!-- FOOTER -->
     <footer class="disclaimer">
       <h3 class="section-title" style="font-size:1.1rem;">Candestra</h3>
       <p>© 2025 Candestra Ltd. All rights reserved.</p>
@@ -366,9 +322,7 @@
 
   </div>
 
-  <!-- JAVASCRIPT -->
   <script>
-    // Initialize DataTable
     $(document).ready(function () {
       $('#reports').DataTable({
         paging: false,
@@ -383,10 +337,7 @@
             type: 'date',
             render: function(data, type) {
               if (type === 'sort') {
-                const months = {
-                  Jan: '01', Feb: '02', Mar: '03', Apr: '04', May: '05', Jun: '06',
-                  Jul: '07', Aug: '08', Sep: '09', Oct: '10', Nov: '11', Dec: '12'
-                };
+                const months = {Jan:'01',Feb:'02',Mar:'03',Apr:'04',May:'05',Jun:'06',Jul:'07',Aug:'08',Sep:'09',Oct:'10',Nov:'11',Dec:'12'};
                 const parts = data.split('-');
                 return parts[0] + '-' + months[parts[1]] + '-' + parts[2];
               }
@@ -397,7 +348,6 @@
       });
     });
 
-    // DARK MODE
     function toggleMode() {
       document.body.classList.toggle('dark-mode');
       const isDark = document.body.classList.contains('dark-mode');
@@ -406,28 +356,20 @@
     }
 
     function updateModeButton(isDark) {
-      const icon = document.getElementById('mode-icon');
-      const text = document.getElementById('mode-text');
-      icon.textContent = isDark ? '☀️' : '🌙';
-      text.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+      document.getElementById('mode-icon').textContent = isDark ? '☀️' : '🌙';
+      document.getElementById('mode-text').textContent = isDark ? 'Light Mode' : 'Dark Mode';
     }
 
     function checkDarkModePreference() {
       const saved = localStorage.getItem('darkMode');
       const prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-      if (saved === null && prefers) {
-        document.body.classList.add('dark-mode');
-      } else if (saved === 'true') {
-        document.body.classList.add('dark-mode');
-      }
-
+      if (saved === null && prefers) document.body.classList.add('dark-mode')
+      else if (saved === 'true') document.body.classList.add('dark-mode');
       updateModeButton(document.body.classList.contains('dark-mode'));
     }
 
     document.addEventListener('DOMContentLoaded', checkDarkModePreference);
 
-    // FORM SUBMISSION
     async function handleFormSubmit(e) {
       e.preventDefault();
       const form = e.target;
@@ -452,11 +394,9 @@
         if (res.ok) {
           alert("Thank you for subscribing!");
           form.reset();
-        } else {
-          throw new Error();
-        }
+        } else throw new Error();
       } catch {
-        alert("Something went wrong. Please try again later.");
+        alert("Something went wrong.");
       }
 
       btn.disabled = false;
