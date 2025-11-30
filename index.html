@@ -291,6 +291,7 @@
       margin-bottom: 0.4rem;
     }
 
+    /* Publications */
     .pub-controls {
       display: flex;
       flex-wrap: wrap;
@@ -338,7 +339,7 @@
     body.dark-mode .chip {
       background: rgba(20, 24, 40, 0.95);
       border-color: rgba(160, 170, 210, 0.7);
-      color: var(--text-color);
+      color: #f2f4ff; /* ensure visible on dark */
     }
 
     .chip span.dot {
@@ -359,7 +360,7 @@
 
     body.dark-mode .chip.active,
     body.dark-mode .chip:hover {
-      background: rgba(0, 85, 255, 0.18);
+      background: rgba(0, 85, 255, 0.2);
     }
 
     .chip.active span.dot {
@@ -498,6 +499,7 @@
       height: 11px;
     }
 
+    /* Subscribe */
     .subscribe-shell {
       display: flex;
       justify-content: flex-start;
@@ -759,6 +761,7 @@
           </p>
         </section>
 
+        <!-- Publications -->
         <section class="section publications">
           <h2 class="section-title">Research &amp; Publications</h2>
           <p class="section-subtitle">
@@ -939,6 +942,7 @@
           </p>
         </section>
 
+        <!-- Subscribe: bottom-left feel -->
         <div class="subscribe-shell">
           <section class="cta-section">
             <h3 class="cta-title">Subscribe for Notes</h3>
@@ -957,7 +961,7 @@
         </div>
       </main>
 
-      <!-- Sidebar with 3rd-party X feed (Elfsight placeholder) -->
+      <!-- Sidebar with official X timeline -->
       <aside class="sidebar">
         <div class="sidebar-card">
           <div class="sidebar-header">
@@ -965,18 +969,15 @@
             <span class="sidebar-badge">X feed</span>
           </div>
 
-          <!--
-            ELFSIGHT (or other widget) EMBED GOES HERE.
-
-            1. Sign up at Elfsight, create a Twitter/X Feed for @dimitriospaolo
-            2. Copy the embed code they give you (script + div)
-            3. Replace the example below with your real code
-          -->
-
-          <!-- Example structure (REPLACE Xs WITH YOUR REAL APP ID) -->
-          <script src="https://elfsightcdn.com/platform.js" async></script>
-          <div class="elfsight-app-8b3b575e-7d42-4643-a2fd-4a013b2492bb" data-elfsight-app-lazy></div>
-
+          <!-- Official X timeline embed as from publish.twitter.com -->
+          <a class="twitter-timeline"
+             data-theme="dark"
+             data-width="100%"
+             data-height="650"
+             data-chrome="noheader nofooter transparent noborders"
+             href="https://twitter.com/dimitriospaolo">
+            Tweets by @dimitriospaolo
+          </a>
         </div>
       </aside>
 
@@ -996,6 +997,9 @@
     </footer>
 
   </div>
+
+  <!-- X / Twitter embed script -->
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
   <script>
     function reloadHome() {
