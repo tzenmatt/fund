@@ -1,6 +1,2 @@
-i am not a professional developer. just working on candestra.com as its first president and chief advisor to our only fund manager (who happens to be my brother), dimitrios paolo. 
-
-as a technololgy enthusiast though, i decided to also manage our website's deployments regarding market updates etc.. it's funny to even have a github profile in the first place!
-
-oh and remember... we do not sell investment advice. 
-
+Candestra is a value-oriented investment research project founded and led by my Dimitrios Paolo (@dimitriospaolo on X).
+At this stage Candestra exists primarily as a body of independent research, personal capital allocation and written publications. It is not an authorised investment fund and does not accept external capital.
