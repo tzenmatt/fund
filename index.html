@@ -291,7 +291,6 @@
       margin-bottom: 0.4rem;
     }
 
-    /* Publications */
     .pub-controls {
       display: flex;
       flex-wrap: wrap;
@@ -499,7 +498,6 @@
       height: 11px;
     }
 
-    /* Subscribe */
     .subscribe-shell {
       display: flex;
       justify-content: flex-start;
@@ -651,11 +649,6 @@
       color: var(--muted);
     }
 
-    .sidebar .twitter-timeline {
-      border-radius: 16px !important;
-      overflow: hidden !important;
-    }
-
     footer.disclaimer {
       font-size: 0.8rem;
       line-height: 1.6;
@@ -684,7 +677,6 @@
       opacity: 0.9;
     }
 
-    /* Responsive */
     @media (max-width: 900px) {
       body {
         padding: 1rem 0.75rem 2.5rem;
@@ -767,7 +759,6 @@
           </p>
         </section>
 
-        <!-- PUBLICATIONS -->
         <section class="section publications">
           <h2 class="section-title">Research &amp; Publications</h2>
           <p class="section-subtitle">
@@ -786,7 +777,6 @@
 
           <div class="pub-grid" id="pub-grid">
 
-            <!-- NEW MTCH -->
             <article class="pub-card" data-date="2025-11-20" data-company="Match Group" data-ticker="MTCH" data-sector="Consumer Internet">
               <div class="pub-main-line">
                 <h3 class="pub-title">
@@ -949,7 +939,6 @@
           </p>
         </section>
 
-        <!-- Subscribe: bottom-left feel -->
         <div class="subscribe-shell">
           <section class="cta-section">
             <h3 class="cta-title">Subscribe for Notes</h3>
@@ -968,7 +957,7 @@
         </div>
       </main>
 
-      <!-- Sidebar with X timeline like a Bloomberg-style feed -->
+      <!-- Sidebar with 3rd-party X feed (Elfsight placeholder) -->
       <aside class="sidebar">
         <div class="sidebar-card">
           <div class="sidebar-header">
@@ -976,15 +965,18 @@
             <span class="sidebar-badge">X feed</span>
           </div>
 
-          <!-- Embed code equivalent to what publish.twitter.com outputs -->
-          <a class="twitter-timeline"
-             data-theme="dark"
-             data-chrome="noheader nofooter transparent"
-             data-width="100%"
-             data-height="650"
-             href="https://twitter.com/dimitriospaolo?ref_src=twsrc%5Etfw">
-            Tweets by @dimitriospaolo
-          </a>
+          <!--
+            ELFSIGHT (or other widget) EMBED GOES HERE.
+
+            1. Sign up at Elfsight, create a Twitter/X Feed for @dimitriospaolo
+            2. Copy the embed code they give you (script + div)
+            3. Replace the example below with your real code
+          -->
+
+          <!-- Example structure (REPLACE Xs WITH YOUR REAL APP ID) -->
+          <script src="https://elfsightcdn.com/platform.js" async></script>
+          <div class="elfsight-app-8b3b575e-7d42-4643-a2fd-4a013b2492bb" data-elfsight-app-lazy></div>
+
         </div>
       </aside>
 
@@ -1004,9 +996,6 @@
     </footer>
 
   </div>
-
-  <!-- X / Twitter embed script (same as publish.twitter.com uses) -->
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
   <script>
     function reloadHome() {
