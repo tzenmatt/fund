@@ -623,6 +623,7 @@
       box-shadow: var(--shadow-soft);
       margin-bottom: 1rem;
       backdrop-filter: blur(8px);
+      min-height: 250px;
     }
 
     body.dark-mode .sidebar-card {
@@ -649,12 +650,6 @@
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--muted);
-    }
-
-    .sidebar-note {
-      font-size: 0.75rem;
-      color: var(--muted);
-      margin-top: 0.35rem;
     }
 
     footer.disclaimer {
@@ -750,7 +745,7 @@
       </div>
       <div class="header-right">
         <div class="social-links">
-          <a href="https://twitter.com/dimitriospaolo" target="_blank" rel="noopener noreferrer" class="social-link">@dimitriospaolo</a>
+          <a href="https://x.com/dimitriospaolo" target="_blank" rel="noopener noreferrer" class="social-link">@dimitriospaolo</a>
         </div>
       </div>
     </header>
@@ -967,7 +962,7 @@
         </div>
       </main>
 
-      <!-- Sidebar with official X timeline -->
+      <!-- Sidebar with Elfsight X feed -->
       <aside class="sidebar">
         <div class="sidebar-card">
           <div class="sidebar-header">
@@ -975,20 +970,11 @@
             <span class="sidebar-badge">X feed</span>
           </div>
 
-          <!-- Official X timeline embed -->
-          <a class="twitter-timeline"
-             data-theme="dark"
-             data-width="100%"
-             data-height="650"
-             data-chrome="noheader nofooter noborders transparent"
-             href="https://twitter.com/dimitriospaolo">
-            Tweets by @dimitriospaolo
-          </a>
+          <!-- Elfsight platform script (leave as-is) -->
+          <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 
-          <p class="sidebar-note">
-            If nothing appears here, your browser or ad blocker may be blocking X embeds. In that case you can open the feed directly on
-            <a href="https://twitter.com/dimitriospaolo" target="_blank" rel="noopener noreferrer">X</a>.
-          </p>
+          <!-- REPLACE APP ID BELOW WITH YOUR REAL ELFSIGHT APP ID -->
+          <div class="elfsight-app-8b3b575e-7d42-4643-a2fd-4a013b2492bb" data-elfsight-app-lazy></div>
         </div>
       </aside>
 
@@ -1009,9 +995,6 @@
 
   </div>
 
-  <!-- Official X / Twitter embed script -->
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
   <script>
     function reloadHome() {
       window.location.reload();
@@ -1022,15 +1005,6 @@
       const isDark = document.body.classList.contains('dark-mode');
       localStorage.setItem('darkMode', isDark);
       updateModeButton(isDark);
-
-      // Try to re-render the X timeline with new theme if widgets.js is loaded
-      if (window.twttr && twttr.widgets && twttr.widgets.load) {
-        const timeline = document.querySelector('.twitter-timeline');
-        if (timeline) {
-          timeline.setAttribute('data-theme', isDark ? 'dark' : 'light');
-          twttr.widgets.load();
-        }
-      }
     }
 
     function updateModeButton(isDark) {
