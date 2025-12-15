@@ -8,7 +8,6 @@
 
   <meta name="description" content="Candestra - A value-oriented investment research project founded and led by Dimitrios Paolo" />
   <meta name="keywords" content="Candestra, investment research, Dimitrios Paolo, private investment, finance, management, value investing, market research" />
-
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Dimitrios Paolo" />
   <meta name="publisher" content="Candestra Ltd." />
@@ -20,699 +19,296 @@
   <meta property="og:url" content="https://www.candestra.com" />
   <meta property="og:image" content="https://www.candestra.com/og-image.jpg" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
   <style>
-    :root {
-      --primary-color: #003366;
-      --accent-color: #f5f5ff;
-      --link-blue: #0055ff;
-      --bg-color: #ffffff;
-      --text-color: #000000;
-      --border-color: #d9d9d9;
-      --muted: #666666;
-      --transition: all 0.25s ease;
-      --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.06);
-      --radius-lg: 18px;
+    :root{
+      --bg:#ffffff;
+      --text:#000000;
+      --muted:#555;
+      --border:#b9b9b9;
+      --link:#0000ee;
+      --visited:#551a8b;
+      --max: 980px;
     }
 
-    body.dark-mode {
-      --bg-color: #070b12;
-      --text-color: #e2e2e2;
-      --border-color: #303544;
-      --muted: #9a9fb3;
-      --link-blue: #7aaaff;
-      --primary-color: #aaccff;
-      --accent-color: #101522;
-      --shadow-soft: 0 14px 30px rgba(0, 0, 0, 0.55);
+    body.dark-mode{
+      --bg:#0b0b0b;
+      --text:#eaeaea;
+      --muted:#b8b8b8;
+      --border:#4b4b4b;
+      --link:#9bbcff;
+      --visited:#c7a6ff;
     }
 
-    * {
-      box-sizing: border-box;
+    *{ box-sizing:border-box; }
+
+    html, body { height:100%; }
+
+    body{
+      margin:0;
+      padding:18px 12px 40px;
+      background:var(--bg);
+      color:var(--text);
+      font-family: "Times New Roman", Times, serif;
+      line-height:1.55;
     }
 
-    body {
-      margin: 0;
-      padding: 1.5rem 1rem 3rem;
-      background:
-        radial-gradient(circle at top left, #eef3ff 0, #ffffff 35%, var(--bg-color) 70%),
-        linear-gradient(135deg, rgba(0,0,0,0.02), rgba(0,0,0,0.06));
-      background-attachment: fixed;
-      color: var(--text-color);
-      font-family: "Inter", sans-serif;
-      transition: var(--transition);
+    .container{
+      max-width:var(--max);
+      margin:0 auto;
     }
 
-    body.dark-mode {
-      background:
-        radial-gradient(circle at top left, #151b33 0, #05060a 35%, #05060a 70%),
-        linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.08));
+    a{ color:var(--link); }
+    a:visited{ color:var(--visited); }
+    a:hover{ text-decoration:none; }
+
+    hr{
+      border:0;
+      border-top:1px solid var(--border);
+      margin:14px 0;
     }
 
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
+    /* Simple “old web” header */
+    header{
+      margin-bottom:10px;
     }
 
-    .mode-toggle {
-      text-align: right;
-      margin-bottom: 0.75rem;
+    .topbar{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
     }
 
-    .mode-toggle button {
-      background: rgba(255, 255, 255, 0.7);
-      border: 1px solid var(--border-color);
-      padding: 0.4rem 0.8rem;
-      cursor: pointer;
-      color: var(--text-color);
-      border-radius: 999px;
-      font-size: 0.85rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      backdrop-filter: blur(6px);
-      transition: var(--transition);
+    .brand{
+      display:block;
+      cursor:pointer;
+      text-decoration:none;
+      color:inherit;
     }
 
-    body.dark-mode .mode-toggle button {
-      background: rgba(8, 10, 18, 0.85);
+    .brand h1{
+      margin:0;
+      font-size:30px;
+      font-weight:bold;
+      letter-spacing:0.2px;
     }
 
-    .mode-toggle button:hover {
-      transform: translateY(-1px);
-      box-shadow: var(--shadow-soft);
+    .tagline{
+      margin:2px 0 0;
+      font-size:14px;
+      color:var(--muted);
     }
 
-    .header {
-      padding: 1.3rem 1.5rem 1.2rem;
-      margin-bottom: 1.7rem;
-      border-radius: 24px;
-      border: 1px solid var(--border-color);
-      background:
-        linear-gradient(135deg, rgba(255,255,255,0.97), rgba(245,248,255,0.9));
-      box-shadow: var(--shadow-soft);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      position: relative;
-      overflow: hidden;
+    .right-tools{
+      text-align:right;
+      min-width:220px;
     }
 
-    .header::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background: radial-gradient(circle at 0 0, rgba(0,85,255,0.08), transparent 60%);
-      pointer-events: none;
+    .mode-toggle button{
+      font-family: inherit;
+      font-size: 14px;
+      padding: 4px 8px;
+      border:1px solid var(--border);
+      background:transparent;
+      color:var(--text);
+      cursor:pointer;
     }
 
-    body.dark-mode .header {
-      background: radial-gradient(circle at top left, #141c33, #070b12);
+    .mode-toggle button:hover{
+      text-decoration:underline;
     }
 
-    .logo-block {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      cursor: pointer;
-      position: relative;
-      z-index: 1;
+    /* Main layout (keep it simple + “full-fledged”) */
+    main{
+      margin-top:10px;
     }
 
-    .logo-text {
-      font-family: 'Inter', sans-serif;
-      font-size: 2.4rem;
-      font-weight: 700;
-      color: var(--primary-color);
-      letter-spacing: -0.6px;
-      margin: 0;
+    .section-title{
+      margin:0 0 6px;
+      font-size:18px;
+      font-weight:bold;
     }
 
-    .bear-icon {
-      width: 34px;
-      height: 34px;
-      border-radius: 14px;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      background: radial-gradient(circle at 30% 25%, #ffffff, #f0f2ff);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-      transition: var(--transition);
-      animation: bearFloat 5s ease-in-out infinite;
+    .section-subtitle{
+      margin:0 0 10px;
+      color:var(--muted);
+      font-size:14px;
     }
 
-    body.dark-mode .bear-icon {
-      background: radial-gradient(circle at 30% 25%, #182036, #050815);
-      border-color: rgba(255, 255, 255, 0.1);
+    .intro{
+      margin: 0 0 14px;
+      padding: 10px 12px;
+      border:1px solid var(--border);
     }
 
-    .logo-block:hover .bear-icon {
-      transform: translateY(-3px) rotate(-5deg);
-      box-shadow: var(--shadow-soft);
+    .intro p{
+      margin:0 0 8px;
+    }
+    .intro p:last-child{ margin-bottom:0; }
+
+    /* Publications controls */
+    .pub-controls{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      align-items:center;
+      margin: 8px 0 10px;
     }
 
-    .logo-block:hover .logo-text {
-      text-shadow: 0 12px 18px rgba(0, 0, 0, 0.18);
+    .pub-search{
+      font-family: inherit;
+      font-size: 14px;
+      padding: 4px 6px;
+      border:1px solid var(--border);
+      background:transparent;
+      color:var(--text);
+      flex: 1 1 240px;
+      min-width: 200px;
     }
 
-    @keyframes bearFloat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-3px); }
+    .chip{
+      font-family: inherit;
+      font-size: 14px;
+      padding: 4px 8px;
+      border:1px solid var(--border);
+      background:transparent;
+      color:var(--text);
+      cursor:pointer;
+      white-space:nowrap;
     }
 
-    .header-right {
-      position: relative;
-      z-index: 1;
-      text-align: right;
+    .chip.active{
+      text-decoration:underline;
     }
 
-    .social-links {
-      margin-top: 0.2rem;
+    /* Publications list */
+    .pub-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      border:1px solid var(--border);
     }
 
-    .social-link {
-      color: var(--link-blue);
-      text-decoration: none;
-      font-size: 0.95rem;
-      padding: 0.2rem 0.75rem;
-      border-radius: 999px;
-      border: 1px solid rgba(0, 85, 255, 0.18);
-      background: rgba(0, 85, 255, 0.04);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      transition: var(--transition);
+    .pub-item{
+      padding:10px 12px;
+      border-top:1px solid var(--border);
+    }
+    .pub-item:first-child{ border-top:none; }
+
+    .pub-line{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
     }
 
-    .social-link::before {
-      content: "X";
-      font-size: 0.8rem;
-      font-weight: 600;
-      opacity: 0.7;
+    .pub-title{
+      margin:0;
+      font-size:16px;
+      font-weight:bold;
     }
 
-    .social-link:hover {
-      background: rgba(0, 85, 255, 0.1);
-      box-shadow: var(--shadow-soft);
-      transform: translateY(-1px);
+    .pub-date{
+      font-size:13px;
+      color:var(--muted);
+      white-space:nowrap;
     }
 
-    .layout {
-      display: grid;
-      grid-template-columns: minmax(0, 2.2fr) minmax(260px, 1fr);
-      gap: 2rem;
-      align-items: flex-start;
+    .pub-meta{
+      margin:4px 0 0;
+      font-size:14px;
+      color:var(--muted);
     }
 
-    .intro-card {
-      border-radius: var(--radius-lg);
-      padding: 1.3rem 1.5rem 1.4rem;
-      background: var(--accent-color);
-      border: 1px solid var(--border-color);
-      margin-bottom: 1.5rem;
-      position: relative;
-      overflow: hidden;
+    .pub-meta span{
+      display:inline-block;
+      margin-right:10px;
     }
 
-    .intro-card::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background: radial-gradient(circle at 0 0, rgba(0, 85, 255, 0.09), transparent 55%);
-      opacity: 0.9;
-      pointer-events: none;
-    }
-
-    .intro-card p {
-      position: relative;
-      z-index: 1;
-      margin: 0;
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-
-    .intro-note {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-top: 0.65rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .section {
-      margin-bottom: 2.5rem;
-    }
-
-    .section-title {
-      font-family: "Merriweather", serif;
-      font-size: 1.25rem;
-      margin: 0 0 0.75rem;
-      color: var(--primary-color);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .section-title::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(to right, rgba(0, 0, 0, 0.12), transparent 65%);
-    }
-
-    .section-subtitle {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 0.4rem;
-    }
-
-    /* Publications */
-    .pub-controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-
-    .pub-search {
-      flex: 1 1 190px;
-      min-width: 0;
-      border-radius: 999px;
-      border: 1px solid var(--border-color);
-      padding: 0.55rem 0.9rem;
-      font-size: 0.9rem;
-      background: rgba(255, 255, 255, 0.7);
-      outline: none;
-      transition: var(--transition);
-    }
-
-    body.dark-mode .pub-search {
-      background: rgba(3, 5, 12, 0.9);
-    }
-
-    .pub-search:focus {
-      border-color: var(--link-blue);
-      box-shadow: 0 0 0 1px rgba(0, 85, 255, 0.2);
-    }
-
-    .chip {
-      border-radius: 999px;
-      border: 1px solid var(--border-color);
-      padding: 0.35rem 0.75rem;
-      font-size: 0.8rem;
-      background: rgba(255, 255, 255, 0.7);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      transition: var(--transition);
-      white-space: nowrap;
-      color: var(--text-color);
-    }
-
-    body.dark-mode .chip {
-      background: rgba(20, 24, 40, 0.95);
-      border-color: rgba(160, 170, 210, 0.7);
-      color: #f2f4ff;
-    }
-
-    .chip span.dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--link-blue);
-      opacity: 0;
-      transition: var(--transition);
-    }
-
-    .chip.active,
-    .chip:hover {
-      border-color: var(--link-blue);
-      background: rgba(0, 85, 255, 0.07);
-      box-shadow: var(--shadow-soft);
-    }
-
-    body.dark-mode .chip.active,
-    body.dark-mode .chip:hover {
-      background: rgba(0, 85, 255, 0.2);
-    }
-
-    .chip.active span.dot {
-      opacity: 1;
-    }
-
-    .pub-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-
-    .pub-card {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-color);
-      padding: 0.95rem 1rem;
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-
-    body.dark-mode .pub-card {
-      background: linear-gradient(145deg, #070b12, #121624);
-    }
-
-    .pub-card::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background: radial-gradient(circle at 100% 0, rgba(0, 85, 255, 0.07), transparent 55%);
-      opacity: 0;
-      transition: var(--transition);
-      pointer-events: none;
-    }
-
-    .pub-card:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-soft);
-      border-color: rgba(0, 85, 255, 0.35);
-    }
-
-    .pub-card:hover::before {
-      opacity: 1;
-    }
-
-    .pub-main-line {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      align-items: flex-start;
-      margin-bottom: 0.35rem;
-    }
-
-    .pub-title {
-      margin: 0;
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-    }
-
-    .pub-title a {
-      color: inherit;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(0, 85, 255, 0.35);
-      padding-bottom: 1px;
-    }
-
-    .pub-title a:hover {
-      border-bottom-color: transparent;
-      color: var(--link-blue);
-    }
-
-    .pub-date {
-      font-size: 0.8rem;
-      color: var(--muted);
-      white-space: nowrap;
-    }
-
-    .pub-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-      align-items: center;
-      margin-bottom: 0.4rem;
-    }
-
-    .meta-pill {
-      padding: 0.1rem 0.55rem;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.03);
-      border: 1px solid rgba(0, 0, 0, 0.06);
-    }
-
-    body.dark-mode .meta-pill {
-      background: rgba(255, 255, 255, 0.03);
-      border-color: rgba(255, 255, 255, 0.08);
-    }
-
-    .pub-footer {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 0.3rem;
-      font-size: 0.8rem;
-    }
-
-    .btn-link {
-      border-radius: 999px;
-      border: 1px solid rgba(0, 85, 255, 0.25);
-      padding: 0.3rem 0.75rem;
-      text-decoration: none;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--link-blue);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      background: rgba(0, 85, 255, 0.04);
-      transition: var(--transition);
-    }
-
-    .btn-link:hover {
-      background: rgba(0, 85, 255, 0.12);
-      box-shadow: var(--shadow-soft);
-      transform: translateY(-1px);
-    }
-
-    .btn-link svg {
-      width: 11px;
-      height: 11px;
+    .pub-actions{
+      margin-top:6px;
+      font-size:14px;
     }
 
     /* Subscribe */
-    .subscribe-shell {
-      display: flex;
-      justify-content: flex-start;
-      margin-top: 2.3rem;
+    .subscribe{
+      margin-top:18px;
+      padding:10px 12px;
+      border:1px solid var(--border);
     }
 
-    .cta-section {
-      max-width: 320px;
-      border-radius: 22px;
-      padding: 1rem 1.15rem 1.1rem;
-      border: 1px solid var(--border-color);
-      background: linear-gradient(135deg, rgba(0, 85, 255, 0.04), rgba(255, 255, 255, 0.9));
-      box-shadow: var(--shadow-soft);
-      position: relative;
+    .subscribe h3{
+      margin:0 0 6px;
+      font-size:16px;
+      font-weight:bold;
     }
 
-    body.dark-mode .cta-section {
-      background: radial-gradient(circle at top left, #11182c, #05070f);
+    .subscribe p{
+      margin:0 0 10px;
+      color:var(--muted);
+      font-size:14px;
     }
 
-    .cta-title {
-      font-family: "Merriweather", serif;
-      font-size: 1.1rem;
-      color: var(--primary-color);
-      margin: 0 0 0.25rem;
+    .email-form{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin:0;
     }
 
-    .cta-copy {
-      font-size: 0.86rem;
-      color: var(--muted);
-      margin: 0 0 0.7rem;
+    .email-input{
+      font-family: inherit;
+      font-size: 14px;
+      padding: 4px 6px;
+      border:1px solid var(--border);
+      background:transparent;
+      color:var(--text);
+      flex:1 1 220px;
+      min-width:200px;
     }
 
-    .email-form {
-      margin-top: 0.2rem;
-      display: flex;
-      gap: 0.4rem;
-      flex-wrap: nowrap;
+    .btn{
+      font-family: inherit;
+      font-size: 14px;
+      padding: 4px 10px;
+      border:1px solid var(--border);
+      background:transparent;
+      color:var(--text);
+      cursor:pointer;
+    }
+    .btn:hover{ text-decoration:underline; }
+
+    .small-note{
+      margin:8px 0 0;
+      font-size:13px;
+      color:var(--muted);
     }
 
-    .email-input {
-      padding: 0.55rem 0.7rem;
-      border: 1px solid var(--border-color);
-      border-radius: 999px;
-      width: 100%;
-      font-size: 0.86rem;
-      outline: none;
-      background: rgba(255, 255, 255, 0.85);
-      transition: var(--transition);
+    footer{
+      margin-top:22px;
+      padding-top:12px;
+      border-top:1px solid var(--border);
+      font-size:13px;
+      color:var(--muted);
     }
 
-    body.dark-mode .email-input {
-      background: rgba(7, 9, 18, 0.9);
+    footer h3{
+      margin:0 0 6px;
+      font-size:14px;
+      font-weight:bold;
+      color:var(--text);
     }
 
-    .email-input:focus {
-      border-color: var(--link-blue);
-      box-shadow: 0 0 0 1px rgba(0, 85, 255, 0.18);
-    }
+    footer p{ margin:0 0 10px; }
 
-    .btn {
-      padding: 0.55rem 0.9rem;
-      background: var(--primary-color);
-      color: white;
-      border: none;
-      cursor: pointer;
-      transition: var(--transition);
-      border-radius: 999px;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      white-space: nowrap;
-    }
-
-    .btn:hover {
-      opacity: 0.9;
-      transform: translateY(-1px);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .small-note {
-      font-size: 0.76rem;
-      color: var(--muted);
-      margin-top: 0.4rem;
-    }
-
-    .contact-text,
-    .letters-text {
-      font-size: 0.9rem;
-      line-height: 1.7;
-      color: var(--text-color);
-    }
-
-    .contact-text a {
-      color: var(--link-blue);
-    }
-
-    .sidebar {
-      position: sticky;
-      top: 2rem;
-      align-self: flex-start;
-    }
-
-    .sidebar-card {
-      border-radius: 20px;
-      border: 1px solid var(--border-color);
-      padding: 0.85rem 0.9rem 0.7rem;
-      background: rgba(255, 255, 255, 0.97);
-      box-shadow: var(--shadow-soft);
-      margin-bottom: 1rem;
-      backdrop-filter: blur(8px);
-      min-height: 250px;
-    }
-
-    body.dark-mode .sidebar-card {
-      background: linear-gradient(145deg, rgba(7, 11, 26, 0.98), rgba(16, 22, 42, 0.98));
-      border-color: rgba(145, 155, 190, 0.7);
-    }
-
-    .sidebar-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 0.4rem;
-    }
-
-    .sidebar-title {
-      font-family: "Merriweather", serif;
-      font-size: 1.05rem;
-      margin: 0;
-      color: var(--primary-color);
-    }
-
-    .sidebar-badge {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--muted);
-    }
-
-    footer.disclaimer {
-      font-size: 0.8rem;
-      line-height: 1.6;
-      color: var(--muted);
-      margin-top: 3rem;
-      padding-top: 1.4rem;
-      border-top: 1px solid var(--border-color);
-    }
-
-    footer.disclaimer h3 {
-      font-family: "Merriweather", serif;
-      font-size: 1.05rem;
-      margin: 0 0 0.5rem;
-      color: var(--primary-color);
-    }
-
-    footer.disclaimer p {
-      margin: 0 0 0.8rem;
-    }
-
-    a {
-      color: var(--link-blue);
-    }
-
-    a:hover {
-      opacity: 0.9;
-    }
-
-    @media (max-width: 900px) {
-      body {
-        padding: 1rem 0.75rem 2.5rem;
-      }
-
-      .header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .header-right {
-        text-align: left;
-      }
-
-      .layout {
-        grid-template-columns: 1fr;
-      }
-
-      .sidebar {
-        position: static;
-      }
-
-      .cta-section {
-        max-width: 100%;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .pub-main-line {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .pub-date {
-        margin-top: 0.1rem;
-      }
-
-      .email-form {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .mode-toggle {
-        text-align: left;
-      }
+    @media (max-width:600px){
+      .right-tools{ text-align:left; min-width:unset; }
+      .pub-line{ flex-direction:column; align-items:flex-start; }
+      .email-form{ flex-direction:column; align-items:stretch; }
+      .btn{ width: fit-content; }
     }
   </style>
 </head>
@@ -720,266 +316,207 @@
 <body>
   <div class="container">
 
-    <div class="mode-toggle">
-      <button onclick="toggleMode()">
-        <span id="mode-icon">🌙</span> <span id="mode-text">Dark Mode</span>
-      </button>
-    </div>
+    <header>
+      <div class="topbar">
+        <a class="brand" href="#" onclick="reloadHome(); return false;" title="Reload Candestra">
+          <h1>Candestra</h1>
+          <div class="tagline">Investment Research &amp; Commentary</div>
+        </a>
 
-    <header class="header">
-      <div class="logo-block" onclick="reloadHome()" title="Reload Candestra">
-        <h1 class="logo-text">Candestra</h1>
-        <div class="bear-icon" aria-hidden="true">🐻</div>
-      </div>
-      <div class="header-right">
-        <div class="social-links">
-          <a href="https://x.com/dimitriospaolo" target="_blank" rel="noopener noreferrer" class="social-link">@dimitriospaolo</a>
+        <div class="right-tools">
+          <div class="mode-toggle">
+            <button type="button" onclick="toggleMode()">
+              <span id="mode-icon">🌙</span> <span id="mode-text">Dark Mode</span>
+            </button>
+          </div>
         </div>
       </div>
+      <hr />
     </header>
 
-    <div class="layout">
+    <main>
+      <section class="intro">
+        <p>
+          Candestra is a value-oriented investment research project founded and led by Dimitrios Paolo. We follow a value-oriented philosophy, seeking complexity that is mispriced or misunderstood. Where conviction is high and inefficiency is clear, we size significantly. Because true opportunities are rare, we operate with a long-term time horizon and a willingness to remain inactive when nothing meets our standards.
+        </p>
+        <p>
+          <strong>Note:</strong> At this stage Candestra exists primarily as a body of independent research, personal capital allocation and written publications. It is not an authorised investment fund and does not accept external capital.
+        </p>
+      </section>
 
-      <main>
-        <section class="intro-card">
-          <p>
-            Candestra is a value-oriented investment research project founded and led by Dimitrios Paolo. We follow a value-oriented philosophy, seeking complexity that is mispriced or misunderstood. Where conviction is high and inefficiency is clear, we size significantly. Because true opportunities are rare, we operate with a long-term time horizon and a willingness to remain inactive when nothing meets our standards.
-          </p>
-          <p class="intro-note">
-            At this stage Candestra exists primarily as a body of independent research, personal capital allocation and written publications. It is not an authorised investment fund and does not accept external capital.
-          </p>
-        </section>
+      <section>
+        <h2 class="section-title">Research &amp; Publications</h2>
+        <p class="section-subtitle">Selected write-ups and deep dives. All pieces are freely available as PDFs.</p>
 
-        <!-- Publications -->
-        <section class="section publications">
-          <h2 class="section-title">Research &amp; Publications</h2>
-          <p class="section-subtitle">
-            Selected write-ups and deep dives. All pieces are freely available as PDFs.
-          </p>
-
-          <div class="pub-controls">
-            <input type="search" id="pub-search" class="pub-search" placeholder="Filter by company, ticker or theme…" aria-label="Filter publications">
-            <button class="chip active" data-sort="newest">
-              <span class="dot"></span> Newest first
-            </button>
-            <button class="chip" data-sort="oldest">
-              <span class="dot"></span> Oldest first
-            </button>
-          </div>
-
-          <div class="pub-grid" id="pub-grid">
-
-            <article class="pub-card" data-date="2025-11-20" data-company="Match Group" data-ticker="MTCH" data-sector="Consumer Internet">
-              <div class="pub-main-line">
-                <h3 class="pub-title">
-                  <a href="https://www.dropbox.com/scl/fi/ihunkadipk8rq638e3ant/Candestra-MTCH-Insight.pdf?rlkey=9253nke78h0sdmz5izr5jpb68&st=s4jhey9i&raw=1" target="_blank" rel="noopener noreferrer">
-                    Maybe Dating Isn’t as “Dead” as Everyone Thinks
-                  </a>
-                </h3>
-                <span class="pub-date">2025-Nov-20</span>
-              </div>
-              <div class="pub-meta">
-                <span class="meta-pill">Match Group</span>
-                <span class="meta-pill">Ticker: MTCH</span>
-                <span class="meta-pill">Sector: Consumer Internet</span>
-              </div>
-              <div class="pub-footer">
-                <a class="btn-link" href="https://www.dropbox.com/scl/fi/ihunkadipk8rq638e3ant/Candestra-MTCH-Insight.pdf?rlkey=9253nke78h0sdmz5izr5jpb68&st=s4jhey9i&raw=1" target="_blank" rel="noopener noreferrer">
-                  Open PDF
-                  <svg viewBox="0 0 16 16" aria-hidden="true">
-                    <path fill="currentColor" d="M5.5 3h7a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0V4.707L4.854 11.854a.5.5 0 1 1-.708-.708L11.293 4H5.5a.5.5 0 0 1 0-1z"/>
-                  </svg>
-                </a>
-              </div>
-            </article>
-
-            <article class="pub-card" data-date="2025-09-11" data-company="Nostr Protocol" data-ticker="N/A" data-sector="Software">
-              <div class="pub-main-line">
-                <h3 class="pub-title">
-                  <a href="https://www.dropbox.com/scl/fi/fnzj2i314djcmxbq2xsqr/Candestra-Nostr-Insight.pdf?rlkey=q18jk29hxwgb36kt7b302sg96&st=41o3z97r&raw=1" target="_blank" rel="noopener noreferrer">
-                    Nostr: A Truly Censorship Resistant Technology at Scale
-                  </a>
-                </h3>
-                <span class="pub-date">2025-Sep-11</span>
-              </div>
-              <div class="pub-meta">
-                <span class="meta-pill">Nostr Protocol</span>
-                <span class="meta-pill">Ticker: N/A</span>
-                <span class="meta-pill">Sector: Software</span>
-              </div>
-              <div class="pub-footer">
-                <a class="btn-link" href="https://www.dropbox.com/scl/fi/fnzj2i314djcmxbq2xsqr/Candestra-Nostr-Insight.pdf?rlkey=q18jk29hxwgb36kt7b302sg96&st=41o3z97r&raw=1" target="_blank" rel="noopener noreferrer">
-                  Open PDF
-                  <svg viewBox="0 0 16 16" aria-hidden="true">
-                    <path fill="currentColor" d="M5.5 3h7a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0V4.707L4.854 11.854a.5.5 0 1 1-.708-.708L11.293 4H5.5a.5.5 0 0 1 0-1z"/>
-                  </svg>
-                </a>
-              </div>
-            </article>
-
-            <article class="pub-card" data-date="2025-08-07" data-company="Intel Corporation" data-ticker="INTC" data-sector="Technology">
-              <div class="pub-main-line">
-                <h3 class="pub-title">
-                  <a href="https://www.dropbox.com/scl/fi/a8eki48levxr5nlrmszpr/Candestra-Intel-Update.pdf?rlkey=mfi6jxm6am7oihxgj0h3b3gnk&raw=1" target="_blank" rel="noopener noreferrer">
-                    The Entire World Is Betting Against Intel Whilst I Buy More
-                  </a>
-                </h3>
-                <span class="pub-date">2025-Aug-07</span>
-              </div>
-              <div class="pub-meta">
-                <span class="meta-pill">Intel Corporation</span>
-                <span class="meta-pill">Ticker: INTC</span>
-                <span class="meta-pill">Sector: Technology</span>
-              </div>
-              <div class="pub-footer">
-                <a class="btn-link" href="https://www.dropbox.com/scl/fi/a8eki48levxr5nlrmszpr/Candestra-Intel-Update.pdf?rlkey=mfi6jxm6am7oihxgj0h3b3gnk&raw=1" target="_blank" rel="noopener noreferrer">
-                  Open PDF
-                  <svg viewBox="0 0 16 16" aria-hidden="true">
-                    <path fill="currentColor" d="M5.5 3h7a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0V4.707L4.854 11.854a.5.5 0 1 1-.708-.708L11.293 4H5.5a.5.5 0 0 1 0-1z"/>
-                  </svg>
-                </a>
-              </div>
-            </article>
-
-            <article class="pub-card" data-date="2025-06-23" data-company="INmune Bio, Inc." data-ticker="INMB" data-sector="Biotechnology">
-              <div class="pub-main-line">
-                <h3 class="pub-title">
-                  <a href="https://www.dropbox.com/scl/fi/8gmk4p3hj6vyhxqipwckg/short-INMB.pdf?rlkey=0yomonlaaw487sx8qm22ezmd3&st=itoj1m5h&raw=1" target="_blank" rel="noopener noreferrer">
-                    Why I'm Short INmune Bio
-                  </a>
-                </h3>
-                <span class="pub-date">2025-Jun-23</span>
-              </div>
-              <div class="pub-meta">
-                <span class="meta-pill">INmune Bio, Inc.</span>
-                <span class="meta-pill">Ticker: INMB</span>
-                <span class="meta-pill">Sector: Biotechnology</span>
-              </div>
-              <div class="pub-footer">
-                <a class="btn-link" href="https://www.dropbox.com/scl/fi/8gmk4p3hj6vyhxqipwckg/short-INMB.pdf?rlkey=0yomonlaaw487sx8qm22ezmd3&st=itoj1m5h&raw=1" target="_blank" rel="noopener noreferrer">
-                  Open PDF
-                  <svg viewBox="0 0 16 16" aria-hidden="true">
-                    <path fill="currentColor" d="M5.5 3h7a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0V4.707L4.854 11.854a.5.5 0 1 1-.708-.708L11.293 4H5.5a.5.5 0 0 1 0-1z"/>
-                  </svg>
-                </a>
-              </div>
-            </article>
-
-            <article class="pub-card" data-date="2025-01-16" data-company="Intel Corporation" data-ticker="INTC" data-sector="Technology">
-              <div class="pub-main-line">
-                <h3 class="pub-title">
-                  <a href="https://www.dropbox.com/scl/fi/5sduoi8hb7du134ms3t8o/Candestra-Intel-Insight.pdf?rlkey=3rd85asz90umacaszkhfnfod4&st=6q9id29u&raw=1" target="_blank" rel="noopener noreferrer">
-                    Intel's Silent Revival That Only a Few Can See
-                  </a>
-                </h3>
-                <span class="pub-date">2025-Jan-16</span>
-              </div>
-              <div class="pub-meta">
-                <span class="meta-pill">Intel Corporation</span>
-                <span class="meta-pill">Ticker: INTC</span>
-                <span class="meta-pill">Sector: Technology</span>
-              </div>
-              <div class="pub-footer">
-                <a class="btn-link" href="https://www.dropbox.com/scl/fi/5sduoi8hb7du134ms3t8o/Candestra-Intel-Insight.pdf?rlkey=3rd85asz90umacaszkhfnfod4&st=6q9id29u&raw=1" target="_blank" rel="noopener noreferrer">
-                  Open PDF
-                  <svg viewBox="0 0 16 16" aria-hidden="true">
-                    <path fill="currentColor" d="M5.5 3h7a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0V4.707L4.854 11.854a.5.5 0 1 1-.708-.708L11.293 4H5.5a.5.5 0 0 1 0-1z"/>
-                  </svg>
-                </a>
-              </div>
-            </article>
-
-            <article class="pub-card" data-date="2024-09-06" data-company="Robinhood Markets, Inc." data-ticker="HOOD" data-sector="Financials">
-              <div class="pub-main-line">
-                <h3 class="pub-title">
-                  <a href="https://www.dropbox.com/scl/fi/hrj2mfabxwmipew4z7c63/Candestra-Robinhood-Market-Insight.pdf?rlkey=yx0twb2jlz7cu4prrvigg360n&st=1geygazq&raw=1" target="_blank" rel="noopener noreferrer">
-                    The Insane Hype Of Retail Traders Gambling The Stock Market
-                  </a>
-                </h3>
-                <span class="pub-date">2024-Sep-06</span>
-              </div>
-              <div class="pub-meta">
-                <span class="meta-pill">Robinhood Markets, Inc.</span>
-                <span class="meta-pill">Ticker: HOOD</span>
-                <span class="meta-pill">Sector: Financials</span>
-              </div>
-              <div class="pub-footer">
-                <a class="btn-link" href="https://www.dropbox.com/scl/fi/hrj2mfabxwmipew4z7c63/Candestra-Robinhood-Market-Insight.pdf?rlkey=yx0twb2jlz7cu4prrvigg360n&st=1geygazq&raw=1" target="_blank" rel="noopener noreferrer">
-                  Open PDF
-                  <svg viewBox="0 0 16 16" aria-hidden="true">
-                    <path fill="currentColor" d="M5.5 3h7a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0V4.707L4.854 11.854a.5.5 0 1 1-.708-.708L11.293 4H5.5a.5.5 0 0 1 0-1z"/>
-                  </svg>
-                </a>
-              </div>
-            </article>
-
-          </div>
-        </section>
-
-        <section class="section">
-          <h2 class="section-title">Contact</h2>
-          <p class="contact-text">
-            For any inquiries regarding the research, collaborations, or future projects, please email
-            <a href="mailto:info@candestra.com">info@candestra.com</a>.
-          </p>
-        </section>
-
-        <section class="section">
-          <h2 class="section-title">Investor Letters</h2>
-          <p class="letters-text">
-            There are no letters to display at this moment; however, partners will find any and all future letters in this area once regular Candestra letters are published.
-          </p>
-        </section>
-
-        <!-- Subscribe: bottom-left feel -->
-        <div class="subscribe-shell">
-          <section class="cta-section">
-            <h3 class="cta-title">Stay Ahead</h3>
-            <p class="cta-copy">
-              Occasional market commentary and new publication alerts, written personally by Dimitrios Paolo.
-            </p>
-
-            <form id="subscribe-form" class="email-form" onsubmit="return handleFormSubmit(event)" action="https://formspree.io/f/mqaygbky" method="POST">
-              <input type="email" name="email" class="email-input" placeholder="Your best email" required>
-              <button type="submit" class="btn">Join</button>
-            </form>
-            <p class="small-note">
-              Emails are infrequent and focused on substance. You can unsubscribe at any time.
-            </p>
-          </section>
+        <div class="pub-controls">
+          <input type="search" id="pub-search" class="pub-search" placeholder="Filter by company, ticker or theme…" aria-label="Filter publications">
+          <button type="button" class="chip active" data-sort="newest">Newest first</button>
+          <button type="button" class="chip" data-sort="oldest">Oldest first</button>
         </div>
-      </main>
 
-      <!-- Sidebar with Elfsight X feed -->
-      <aside class="sidebar">
-        <div class="sidebar-card">
-          <div class="sidebar-header">
-            <h3 class="sidebar-title">X feed</h3>
-          </div>
+        <ul class="pub-list" id="pub-grid">
 
-          <!-- Elfsight platform script (leave as-is) -->
-          <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+          <li class="pub-item pub-card" data-date="2025-11-20" data-company="Match Group" data-ticker="MTCH" data-sector="Consumer Internet">
+            <div class="pub-line">
+              <h3 class="pub-title">
+                <a href="https://www.dropbox.com/scl/fi/ihunkadipk8rq638e3ant/Candestra-MTCH-Insight.pdf?rlkey=9253nke78h0sdmz5izr5jpb68&st=s4jhey9i&raw=1" target="_blank" rel="noopener noreferrer">
+                  Maybe Dating Isn’t as “Dead” as Everyone Thinks
+                </a>
+              </h3>
+              <div class="pub-date">2025-Nov-20</div>
+            </div>
+            <div class="pub-meta">
+              <span>Match Group</span>
+              <span>Ticker: MTCH</span>
+              <span>Sector: Consumer Internet</span>
+            </div>
+            <div class="pub-actions">
+              <a href="https://www.dropbox.com/scl/fi/ihunkadipk8rq638e3ant/Candestra-MTCH-Insight.pdf?rlkey=9253nke78h0sdmz5izr5jpb68&st=s4jhey9i&raw=1" target="_blank" rel="noopener noreferrer">Open PDF</a>
+            </div>
+          </li>
 
-          <!-- REPLACE APP ID BELOW WITH YOUR REAL ELFSIGHT APP ID -->
-          <div class="elfsight-app-8b3b575e-7d42-4643-a2fd-4a013b2492bb" data-elfsight-app-lazy></div>
+          <li class="pub-item pub-card" data-date="2025-09-11" data-company="Nostr Protocol" data-ticker="N/A" data-sector="Software">
+            <div class="pub-line">
+              <h3 class="pub-title">
+                <a href="https://www.dropbox.com/scl/fi/fnzj2i314djcmxbq2xsqr/Candestra-Nostr-Insight.pdf?rlkey=q18jk29hxwgb36kt7b302sg96&st=41o3z97r&raw=1" target="_blank" rel="noopener noreferrer">
+                  Nostr: A Truly Censorship Resistant Technology at Scale
+                </a>
+              </h3>
+              <div class="pub-date">2025-Sep-11</div>
+            </div>
+            <div class="pub-meta">
+              <span>Nostr Protocol</span>
+              <span>Ticker: N/A</span>
+              <span>Sector: Software</span>
+            </div>
+            <div class="pub-actions">
+              <a href="https://www.dropbox.com/scl/fi/fnzj2i314djcmxbq2xsqr/Candestra-Nostr-Insight.pdf?rlkey=q18jk29hxwgb36kt7b302sg96&st=41o3z97r&raw=1" target="_blank" rel="noopener noreferrer">Open PDF</a>
+            </div>
+          </li>
+
+          <li class="pub-item pub-card" data-date="2025-08-07" data-company="Intel Corporation" data-ticker="INTC" data-sector="Technology">
+            <div class="pub-line">
+              <h3 class="pub-title">
+                <a href="https://www.dropbox.com/scl/fi/a8eki48levxr5nlrmszpr/Candestra-Intel-Update.pdf?rlkey=mfi6jxm6am7oihxgj0h3b3gnk&raw=1" target="_blank" rel="noopener noreferrer">
+                  The Entire World Is Betting Against Intel Whilst I Buy More
+                </a>
+              </h3>
+              <div class="pub-date">2025-Aug-07</div>
+            </div>
+            <div class="pub-meta">
+              <span>Intel Corporation</span>
+              <span>Ticker: INTC</span>
+              <span>Sector: Technology</span>
+            </div>
+            <div class="pub-actions">
+              <a href="https://www.dropbox.com/scl/fi/a8eki48levxr5nlrmszpr/Candestra-Intel-Update.pdf?rlkey=mfi6jxm6am7oihxgj0h3b3gnk&raw=1" target="_blank" rel="noopener noreferrer">Open PDF</a>
+            </div>
+          </li>
+
+          <li class="pub-item pub-card" data-date="2025-06-23" data-company="INmune Bio, Inc." data-ticker="INMB" data-sector="Biotechnology">
+            <div class="pub-line">
+              <h3 class="pub-title">
+                <a href="https://www.dropbox.com/scl/fi/8gmk4p3hj6vyhxqipwckg/short-INMB.pdf?rlkey=0yomonlaaw487sx8qm22ezmd3&st=itoj1m5h&raw=1" target="_blank" rel="noopener noreferrer">
+                  Why I'm Short INmune Bio
+                </a>
+              </h3>
+              <div class="pub-date">2025-Jun-23</div>
+            </div>
+            <div class="pub-meta">
+              <span>INmune Bio, Inc.</span>
+              <span>Ticker: INMB</span>
+              <span>Sector: Biotechnology</span>
+            </div>
+            <div class="pub-actions">
+              <a href="https://www.dropbox.com/scl/fi/8gmk4p3hj6vyhxqipwckg/short-INMB.pdf?rlkey=0yomonlaaw487sx8qm22ezmd3&st=itoj1m5h&raw=1" target="_blank" rel="noopener noreferrer">Open PDF</a>
+            </div>
+          </li>
+
+          <li class="pub-item pub-card" data-date="2025-01-16" data-company="Intel Corporation" data-ticker="INTC" data-sector="Technology">
+            <div class="pub-line">
+              <h3 class="pub-title">
+                <a href="https://www.dropbox.com/scl/fi/5sduoi8hb7du134ms3t8o/Candestra-Intel-Insight.pdf?rlkey=3rd85asz90umacaszkhfnfod4&st=6q9id29u&raw=1" target="_blank" rel="noopener noreferrer">
+                  Intel's Silent Revival That Only a Few Can See
+                </a>
+              </h3>
+              <div class="pub-date">2025-Jan-16</div>
+            </div>
+            <div class="pub-meta">
+              <span>Intel Corporation</span>
+              <span>Ticker: INTC</span>
+              <span>Sector: Technology</span>
+            </div>
+            <div class="pub-actions">
+              <a href="https://www.dropbox.com/scl/fi/5sduoi8hb7du134ms3t8o/Candestra-Intel-Insight.pdf?rlkey=3rd85asz90umacaszkhfnfod4&st=6q9id29u&raw=1" target="_blank" rel="noopener noreferrer">Open PDF</a>
+            </div>
+          </li>
+
+          <li class="pub-item pub-card" data-date="2024-09-06" data-company="Robinhood Markets, Inc." data-ticker="HOOD" data-sector="Financials">
+            <div class="pub-line">
+              <h3 class="pub-title">
+                <a href="https://www.dropbox.com/scl/fi/hrj2mfabxwmipew4z7c63/Candestra-Robinhood-Market-Insight.pdf?rlkey=yx0twb2jlz7cu4prrvigg360n&st=1geygazq&raw=1" target="_blank" rel="noopener noreferrer">
+                  The Insane Hype Of Retail Traders Gambling The Stock Market
+                </a>
+              </h3>
+              <div class="pub-date">2024-Sep-06</div>
+            </div>
+            <div class="pub-meta">
+              <span>Robinhood Markets, Inc.</span>
+              <span>Ticker: HOOD</span>
+              <span>Sector: Financials</span>
+            </div>
+            <div class="pub-actions">
+              <a href="https://www.dropbox.com/scl/fi/hrj2mfabxwmipew4z7c63/Candestra-Robinhood-Market-Insight.pdf?rlkey=yx0twb2jlz7cu4prrvigg360n&st=1geygazq&raw=1" target="_blank" rel="noopener noreferrer">Open PDF</a>
+            </div>
+          </li>
+
+        </ul>
+      </section>
+
+      <hr />
+
+      <section>
+        <h2 class="section-title">Contact</h2>
+        <p>
+          For any inquiries regarding the research, collaborations, or future projects, please email
+          <a href="mailto:info@candestra.com">info@candestra.com</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="section-title">Investor Letters</h2>
+        <p>
+          There are no letters to display at this moment; however, partners will find any and all future letters in this area once regular Candestra letters are published.
+        </p>
+      </section>
+
+      <section class="subscribe">
+        <h3>Stay Ahead</h3>
+        <p>Occasional market commentary and new publication alerts, written personally by Dimitrios Paolo.</p>
+
+        <form id="subscribe-form" class="email-form" onsubmit="return handleFormSubmit(event)" action="https://formspree.io/f/mqaygbky" method="POST">
+          <input type="email" name="email" class="email-input" placeholder="Your best email" required>
+          <button type="submit" class="btn">Join</button>
+        </form>
+
+        <div class="small-note">
+          Emails are infrequent and focused on substance. You can unsubscribe at any time.
         </div>
-      </aside>
+      </section>
 
-    </div>
+      <footer class="disclaimer">
+        <h3>Candestra</h3>
+        <p>© 2025 Candestra Ltd. All rights reserved.</p>
 
-    <footer class="disclaimer">
-      <h3>Candestra</h3>
-      <p>© 2025 Candestra Ltd. All rights reserved.</p>
+        <p>
+          This website and its contents are intended solely for informational and educational purposes. Nothing herein constitutes an offer to sell or a solicitation of an offer to buy any securities or interests in Candestra Ltd. Candestra currently operates as an independent research and publications project and does not manage external capital on behalf of investors.
+        </p>
 
-      <p>
-        This website and its contents are intended solely for informational and educational purposes. Nothing herein constitutes an offer to sell or a solicitation of an offer to buy any securities or interests in Candestra Ltd. Candestra currently operates as an independent research and publications project and does not manage external capital on behalf of investors.
-      </p>
-
-      <p>
-        Past performance is not indicative of future results. The information contained in this document is not, and should not be construed as, legal, accounting, investment or tax advice. The contents of this document are based upon sources of information believed to be reliable but no warranty or representation, expressed or implied, is given as to their accuracy or completeness.
-      </p>
-    </footer>
-
+        <p>
+          Past performance is not indicative of future results. The information contained in this document is not, and should not be construed as, legal, accounting, investment or tax advice. The contents of this document are based upon sources of information believed to be reliable but no warranty or representation, expressed or implied, is given as to their accuracy or completeness.
+        </p>
+      </footer>
+    </main>
   </div>
 
   <script>
@@ -1005,6 +542,7 @@
     function checkDarkModePreference() {
       const saved = localStorage.getItem('darkMode');
       const prefers = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
       if (saved === null && prefers) {
         document.body.classList.add('dark-mode');
       } else if (saved === 'true') {
@@ -1030,7 +568,7 @@
       }
 
       btn.disabled = true;
-      btn.innerHTML = "Sending…";
+      btn.textContent = "Sending…";
 
       try {
         const res = await fetch(form.action, {
@@ -1050,7 +588,7 @@
       }
 
       btn.disabled = false;
-      btn.innerHTML = "Join";
+      btn.textContent = "Join";
       return false;
     }
 
@@ -1102,6 +640,5 @@
       render();
     }
   </script>
-
 </body>
 </html>
