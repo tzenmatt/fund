@@ -232,7 +232,7 @@
       font-size:14px;
     }
 
-    /* Subscribe */
+    /* Subscribe (container stays, content changes to Substack) */
     .subscribe{
       margin-top:18px;
       padding:10px 12px;
@@ -251,40 +251,42 @@
       font-size:14px;
     }
 
-    .email-form{
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      align-items:center;
-      margin:0;
-    }
-
-    .email-input{
-      font-family: inherit;
-      font-size: 14px;
-      padding: 4px 6px;
-      border:1px solid var(--border);
-      background:transparent;
-      color:var(--text);
-      flex:1 1 220px;
-      min-width:200px;
-    }
-
-    .btn{
-      font-family: inherit;
-      font-size: 14px;
-      padding: 4px 10px;
-      border:1px solid var(--border);
-      background:transparent;
-      color:var(--text);
-      cursor:pointer;
-    }
-    .btn:hover{ text-decoration:underline; }
-
     .small-note{
       margin:8px 0 0;
       font-size:13px;
       color:var(--muted);
+    }
+
+    /* Substack embed styling (matches “old web” and stays responsive) */
+    .embed-frame{
+      border:1px solid var(--border);
+      background: #fff;
+      padding: 6px;
+    }
+
+    body.dark-mode .embed-frame{
+      background: #fff; /* keep embed readable; Substack iframe is light */
+    }
+
+    .embed-frame iframe{
+      display:block;
+      width:100%;
+      max-width: 480px;
+      height: 320px;
+      border:1px solid #EEE;
+      background:white;
+    }
+
+    .embed-wrap{
+      display:flex;
+      justify-content:flex-start;
+    }
+
+    @media (max-width:520px){
+      .embed-frame iframe{
+        max-width: 100%;
+        height: 340px; /* a touch taller on mobile */
+      }
     }
 
     footer{
@@ -307,8 +309,6 @@
     @media (max-width:600px){
       .right-tools{ text-align:left; min-width:unset; }
       .pub-line{ flex-direction:column; align-items:flex-start; }
-      .email-form{ flex-direction:column; align-items:stretch; }
-      .btn{ width: fit-content; }
     }
   </style>
 </head>
@@ -490,17 +490,28 @@
         </p>
       </section>
 
-      <section class="subscribe">
+      <!-- Substack Subscribe (replaces old “Stay Ahead” form) -->
+      <section class="subscribe substack-subscribe">
         <h3>Stay Ahead</h3>
-        <p>Occasional market commentary and new publication alerts, written personally by Dimitrios Paolo.</p>
+        <p>Occasional market commentary and new publication alerts — delivered via Substack.</p>
 
-        <form id="subscribe-form" class="email-form" onsubmit="return handleFormSubmit(event)" action="https://formspree.io/f/mqaygbky" method="POST">
-          <input type="email" name="email" class="email-input" placeholder="Your best email" required>
-          <button type="submit" class="btn">Join</button>
-        </form>
+        <div class="embed-wrap">
+          <div class="embed-frame">
+            <iframe
+              src="https://dimitriospaolo.substack.com/embed"
+              width="480"
+              height="320"
+              style="border:1px solid #EEE; background:white;"
+              frameborder="0"
+              scrolling="no"
+              title="Subscribe to Dimitrios Paolo on Substack"
+            ></iframe>
+          </div>
+        </div>
 
         <div class="small-note">
-          Emails are infrequent and focused on substance. You can unsubscribe at any time.
+          No spam. Unsubscribe anytime. If the embed doesn’t load, you can subscribe directly at
+          <a href="https://dimitriospaolo.substack.com" target="_blank" rel="noopener noreferrer">dimitriospaolo.substack.com</a>.
         </div>
       </section>
 
@@ -555,42 +566,6 @@
       checkDarkModePreference();
       initPublicationControls();
     });
-
-    async function handleFormSubmit(e) {
-      e.preventDefault();
-      const form = e.target;
-      const email = form.email.value.trim();
-      const btn = form.querySelector('button[type="submit"]');
-
-      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        alert("Please enter a valid email.");
-        return false;
-      }
-
-      btn.disabled = true;
-      btn.textContent = "Sending…";
-
-      try {
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (res.ok) {
-          alert("Thank you for subscribing.");
-          form.reset();
-        } else {
-          throw new Error();
-        }
-      } catch {
-        alert("Something went wrong. Please try again.");
-      }
-
-      btn.disabled = false;
-      btn.textContent = "Join";
-      return false;
-    }
 
     function initPublicationControls() {
       const grid = document.getElementById('pub-grid');
