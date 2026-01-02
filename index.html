@@ -67,7 +67,6 @@
       margin:14px 0;
     }
 
-    /* Simple “old web” header */
     header{
       margin-bottom:10px;
     }
@@ -119,7 +118,6 @@
       text-decoration:underline;
     }
 
-    /* Main layout */
     main{
       margin-top:10px;
     }
@@ -232,64 +230,70 @@
       font-size:14px;
     }
 
-    /* Stay Ahead — remove outer “box” so it integrates cleanly with the Substack embed */
+    /* Stay Ahead — centered + match intro typography */
     .subscribe{
       margin-top:18px;
-      padding:0;              /* no outer padding box */
-      border:0;               /* removes the mismatching outline */
+      padding:0;
+      border:0;
+      text-align:center; /* center the whole section */
+      font-family: "Times New Roman", Times, serif; /* explicit, matches intro */
     }
 
     .subscribe h3{
       margin:0 0 6px;
-      font-size:16px;
+      font-size:18px;    /* closer to section-title vibe, still clean */
       font-weight:bold;
     }
 
     .subscribe p{
-      margin:0 0 10px;
-      color:var(--muted);
-      font-size:14px;
-      max-width: 80ch;
+      margin:0 auto 12px;
+      color:var(--text); /* match intro body text (not muted) */
+      font-size:16px;    /* match intro paragraph feel */
+      max-width: 78ch;
+      text-align:left;   /* keep paragraph readable while section is centered */
     }
 
-    .small-note{
-      margin:8px 0 0;
-      font-size:13px;
-      color:var(--muted);
+    .embed-wrap{
+      display:flex;
+      justify-content:center; /* centers the embed frame */
     }
 
-    /* Substack embed styling (matches “old web” and stays responsive) */
     .embed-frame{
-      display:inline-block;   /* shrink-wrap to iframe width */
+      display:inline-block;
       border:1px solid var(--border);
       background:#fff;
       padding:6px;
     }
 
     body.dark-mode .embed-frame{
-      background:#fff; /* keep embed readable; Substack iframe is light */
+      background:#fff; /* keep embed readable */
     }
 
     .embed-frame iframe{
       display:block;
       width:480px;
       height:320px;
-      border:0;               /* let embed-frame handle the border */
+      border:0;
       background:#fff;
     }
 
-    .embed-wrap{
-      display:flex;
-      justify-content:flex-start;
+    .small-note{
+      margin:10px 0 0;
+      font-size:13px;
+      color:var(--muted);
+      text-align:center;
     }
 
     @media (max-width:520px){
+      .subscribe p{
+        text-align:left;
+      }
       .embed-frame{
         width:100%;
       }
       .embed-frame iframe{
         width:100%;
-        height:340px; /* a touch taller on mobile */
+        height:340px;
       }
     }
 
