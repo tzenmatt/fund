@@ -119,7 +119,7 @@
       text-decoration:underline;
     }
 
-    /* Main layout (keep it simple + “full-fledged”) */
+    /* Main layout */
     main{
       margin-top:10px;
     }
@@ -232,11 +232,11 @@
       font-size:14px;
     }
 
-    /* Subscribe (container stays, content changes to Substack) */
+    /* Stay Ahead — remove outer “box” so it integrates cleanly with the Substack embed */
     .subscribe{
       margin-top:18px;
-      padding:10px 12px;
-      border:1px solid var(--border);
+      padding:0;              /* no outer padding box */
+      border:0;               /* removes the mismatching outline */
     }
 
     .subscribe h3{
@@ -249,6 +249,7 @@
       margin:0 0 10px;
       color:var(--muted);
       font-size:14px;
+      max-width: 80ch;
     }
 
     .small-note{
@@ -259,22 +260,22 @@
 
     /* Substack embed styling (matches “old web” and stays responsive) */
     .embed-frame{
+      display:inline-block;   /* shrink-wrap to iframe width */
       border:1px solid var(--border);
-      background: #fff;
-      padding: 6px;
+      background:#fff;
+      padding:6px;
     }
 
     body.dark-mode .embed-frame{
-      background: #fff; /* keep embed readable; Substack iframe is light */
+      background:#fff; /* keep embed readable; Substack iframe is light */
     }
 
     .embed-frame iframe{
       display:block;
-      width:100%;
-      max-width: 480px;
-      height: 320px;
-      border:1px solid #EEE;
-      background:white;
+      width:480px;
+      height:320px;
+      border:0;               /* let embed-frame handle the border */
+      background:#fff;
     }
 
     .embed-wrap{
@@ -283,9 +284,12 @@
     }
 
     @media (max-width:520px){
+      .embed-frame{
+        width:100%;
+      }
       .embed-frame iframe{
-        max-width: 100%;
-        height: 340px; /* a touch taller on mobile */
+        width:100%;
+        height:340px; /* a touch taller on mobile */
       }
     }
 
@@ -485,7 +489,7 @@
         </p>
       </section>
 
-      <!-- Substack Subscribe (replaces old “Stay Ahead” form) -->
+      <!-- Substack Subscribe -->
       <section class="subscribe substack-subscribe">
         <h3>Stay Ahead</h3>
         <p>
@@ -499,9 +503,6 @@
           <div class="embed-frame">
             <iframe
               src="https://dimitriospaolo.substack.com/embed"
-              width="480"
-              height="320"
-              style="border:1px solid #EEE; background:white;"
               frameborder="0"
               scrolling="no"
               title="Subscribe to Dimitrios Paolo on Substack"
